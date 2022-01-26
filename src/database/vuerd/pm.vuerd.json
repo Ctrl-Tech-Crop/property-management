@@ -3,7 +3,7 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -6,
+    "scrollTop": -439,
     "scrollLeft": -2,
     "zoomLevel": 1,
     "show": {
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "FSPropertyManagement",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -564,7 +564,7 @@
           {
             "name": "Area",
             "comment": "",
-            "dataType": "DOUBLE",
+            "dataType": "DECIMAL",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -610,7 +610,7 @@
           {
             "name": "RentAmount",
             "comment": "",
-            "dataType": "DOUBLE",
+            "dataType": "DECIMAL",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -633,7 +633,7 @@
           {
             "name": "DepositAmount",
             "comment": "",
-            "dataType": "DOUBLE",
+            "dataType": "DECIMAL",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -703,8 +703,8 @@
         "ui": {
           "active": false,
           "left": 565,
-          "top": 134,
-          "zIndex": 369,
+          "top": 135,
+          "zIndex": 592,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1240,7 +1240,7 @@
             "861e76eb-8ae2-4726-8914-1bf78928d998"
           ],
           "x": 565,
-          "y": 212.75,
+          "y": 213.75,
           "direction": "left"
         },
         "constraintName": "fk_property_to_unit",
@@ -1266,7 +1266,7 @@
             "eb45d6ad-bfbe-442f-b526-83da2c989b96"
           ],
           "x": 565,
-          "y": 370.25,
+          "y": 371.25,
           "direction": "left"
         },
         "constraintName": "fk_propertytype_to_unit",
@@ -1283,7 +1283,7 @@
             "4d38e8e1-1125-475a-81de-1fcb94078a21"
           ],
           "x": 773.71533203125,
-          "y": 449,
+          "y": 450,
           "direction": "bottom"
         },
         "end": {
