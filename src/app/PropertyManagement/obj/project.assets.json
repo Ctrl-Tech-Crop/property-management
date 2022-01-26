@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Casey\\.nuget\\packages\\": {}
+    "C:\\Users\\mmmmm\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Casey\\source\\repos\\property-management\\src\\app\\PropertyManagement\\PropertyManagement.csproj",
+      "projectUniqueName": "C:\\Users\\mmmmm\\Source\\Repos\\property-management\\src\\app\\PropertyManagement\\PropertyManagement.csproj",
       "projectName": "PropertyManagement",
-      "projectPath": "C:\\Users\\Casey\\source\\repos\\property-management\\src\\app\\PropertyManagement\\PropertyManagement.csproj",
-      "packagesPath": "C:\\Users\\Casey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Casey\\source\\repos\\property-management\\src\\app\\PropertyManagement\\obj\\",
+      "projectPath": "C:\\Users\\mmmmm\\Source\\Repos\\property-management\\src\\app\\PropertyManagement\\PropertyManagement.csproj",
+      "packagesPath": "C:\\Users\\mmmmm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mmmmm\\Source\\Repos\\property-management\\src\\app\\PropertyManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Casey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mmmmm\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
