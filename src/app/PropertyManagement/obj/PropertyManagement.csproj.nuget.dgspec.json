@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mmmmm\\Source\\Repos\\property-management\\src\\app\\PropertyManagement\\PropertyManagement.csproj": {}
+    "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/PropertyManagement/PropertyManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mmmmm\\Source\\Repos\\property-management\\src\\app\\PropertyManagement\\PropertyManagement.csproj": {
+    "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/data/data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mmmmm\\Source\\Repos\\property-management\\src\\app\\PropertyManagement\\PropertyManagement.csproj",
-        "projectName": "PropertyManagement",
-        "projectPath": "C:\\Users\\mmmmm\\Source\\Repos\\property-management\\src\\app\\PropertyManagement\\PropertyManagement.csproj",
-        "packagesPath": "C:\\Users\\mmmmm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mmmmm\\Source\\Repos\\property-management\\src\\app\\PropertyManagement\\obj\\",
+        "projectUniqueName": "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/data/data.csproj",
+        "projectName": "data",
+        "projectPath": "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/data/data.csproj",
+        "packagesPath": "/Users/vidittalwar/.nuget/packages/",
+        "outputPath": "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mmmmm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/vidittalwar/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +37,22 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -49,12 +63,68 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.13, 5.0.13]"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
             }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/5.0.404/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/PropertyManagement/PropertyManagement.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/PropertyManagement/PropertyManagement.csproj",
+        "projectName": "PropertyManagement",
+        "projectPath": "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/PropertyManagement/PropertyManagement.csproj",
+        "packagesPath": "/Users/vidittalwar/.nuget/packages/",
+        "outputPath": "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/PropertyManagement/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/vidittalwar/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/data/data.csproj": {
+                "projectPath": "/Users/vidittalwar/NAIT/BAIST/IS Capstone/property-management/src/app/data/data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
+          "assetTargetFallback": true,
+          "warn": true,
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -63,7 +133,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/5.0.404/RuntimeIdentifierGraph.json"
         }
       }
     }
