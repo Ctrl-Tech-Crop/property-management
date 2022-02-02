@@ -1,0 +1,82 @@
+@page
+@model PropertyManagement.Pages.Units.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Unit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Unit.PropertyId" class="control-label"></label>
+                <select asp-for="Unit.PropertyId" class ="form-control" asp-items="ViewBag.PropertyId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.Number" class="control-label"></label>
+                <input asp-for="Unit.Number" class="form-control" />
+                <span asp-validation-for="Unit.Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.Name" class="control-label"></label>
+                <input asp-for="Unit.Name" class="form-control" />
+                <span asp-validation-for="Unit.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.Type" class="control-label"></label>
+                <input asp-for="Unit.Type" class="form-control" />
+                <span asp-validation-for="Unit.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.UnitTypeId" class="control-label"></label>
+                <select asp-for="Unit.UnitTypeId" class ="form-control" asp-items="ViewBag.UnitTypeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.Area" class="control-label"></label>
+                <input asp-for="Unit.Area" class="form-control" />
+                <span asp-validation-for="Unit.Area" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.NumberofRooms" class="control-label"></label>
+                <input asp-for="Unit.NumberofRooms" class="form-control" />
+                <span asp-validation-for="Unit.NumberofRooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.RentAmount" class="control-label"></label>
+                <input asp-for="Unit.RentAmount" class="form-control" />
+                <span asp-validation-for="Unit.RentAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.DepositAmount" class="control-label"></label>
+                <input asp-for="Unit.DepositAmount" class="form-control" />
+                <span asp-validation-for="Unit.DepositAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Unit.Furnished" /> @Html.DisplayNameFor(model => model.Unit.Furnished)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit.Laundry" class="control-label"></label>
+                <input asp-for="Unit.Laundry" class="form-control" />
+                <span asp-validation-for="Unit.Laundry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

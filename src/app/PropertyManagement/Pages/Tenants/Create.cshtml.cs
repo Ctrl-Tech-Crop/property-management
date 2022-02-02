@@ -1,11 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Authorization;
+using data.context;
 using data.models;
+using Microsoft.AspNetCore.Authorization;
 
-namespace PropertyManagement.Pages.Properties
+namespace PropertyManagement.Pages.Tenants
 {
     [Authorize]
     public class CreateModel : PageModel
@@ -19,12 +23,12 @@ namespace PropertyManagement.Pages.Properties
 
         public IActionResult OnGet()
         {
-            ViewData["PropertyTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
+            ViewData["UnitId"] = new SelectList(_context.Units, "Id", "Number");
             return Page();
         }
 
         [BindProperty]
-        public Property Property { get; set; }
+        public Tenant Tenant { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -34,7 +38,7 @@ namespace PropertyManagement.Pages.Properties
                 return Page();
             }
 
-            _context.Properties.Add(Property);
+            _context.Tenants.Add(Tenant);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

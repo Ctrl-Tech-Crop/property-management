@@ -47,7 +47,7 @@
                 @Html.DisplayNameFor(model => model.Property[0].Smoking)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Property[0].PropertyType)
+                @Html.DisplayNameFor(model => model.Property[0].PropertyType.Name)
             </th>
             <th></th>
         </tr>
@@ -89,7 +89,7 @@
                 @Html.DisplayFor(modelItem => item.Smoking)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PropertyType.Id)
+                @Html.DisplayFor(modelItem => item.PropertyType.Name)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
