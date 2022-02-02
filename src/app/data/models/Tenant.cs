@@ -20,6 +20,7 @@ namespace data.models
         public string Status { get; set; }
         public string Standing { get; set; }
         public string EmergencyContactName { get; set; }
+        [DataType(DataType.PhoneNumber)]
         public int EmergencyContactPhone { get; set; }
         public string EmergencyContactEmail { get; set; }
         public bool ParkingStall { get; set; }
