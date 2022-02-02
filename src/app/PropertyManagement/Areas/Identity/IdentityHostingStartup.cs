@@ -18,7 +18,7 @@ namespace PropertyManagement.Areas.Identity
             {
                 services.AddDbContext<FSPropertyManagementIdentityContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("FSPropertyManagementContext1")));
+                        context.Configuration.GetConnectionString("FSPropertyManagementContext")));
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                     .AddRoles<IdentityRole>()
