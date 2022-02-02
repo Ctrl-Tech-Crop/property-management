@@ -21,7 +21,7 @@ namespace data.models
         public string Standing { get; set; }
         public string EmergencyContactName { get; set; }
         [DataType(DataType.PhoneNumber)]
-        public int EmergencyContactPhone { get; set; }
+        public string EmergencyContactPhone { get; set; }
         public string EmergencyContactEmail { get; set; }
         public bool ParkingStall { get; set; }
         public string MailingAddressLine1 { get; set; }
