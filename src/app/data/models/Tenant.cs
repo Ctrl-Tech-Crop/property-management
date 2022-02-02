@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,7 +14,8 @@ namespace data.models
         public string LastName { get; set; }
         public string PreferredName { get; set; }
         public string Email { get; set; }
-        public int Phone { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
         public DateTime TenancyStartDate { get; set; }
         public string Status { get; set; }
         public string Standing { get; set; }
