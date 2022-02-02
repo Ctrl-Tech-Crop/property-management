@@ -1,0 +1,144 @@
+@page
+@model PropertyManagement.Pages.Tenants.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].PreferredName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].TenancyStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].Standing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].ParkingStall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].MailingAddressLine1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].MailingAddressLine2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].Province)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenant[0].Unit)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tenant) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreferredName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenancyStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Standing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmergencyContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmergencyContactPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmergencyContactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkingStall)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailingAddressLine1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailingAddressLine2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Province)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit.Number)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
