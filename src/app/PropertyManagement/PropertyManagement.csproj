@@ -14,6 +14,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Units\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>3e752794-e04c-427c-944c-8e5c8e96608a</UserSecretsId>
