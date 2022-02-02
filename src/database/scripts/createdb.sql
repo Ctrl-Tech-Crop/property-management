@@ -1,7 +1,7 @@
 
-CREATE DATABASE FSPropertyManagement
+CREATE DATABASE PropertyManagement
 GO
-USE FSPropertyManagement  
+USE PropertyManagement  
 CREATE TABLE Property
 (
   Id               uniqueidentifier NOT NULL DEFAULT NEWID(),
