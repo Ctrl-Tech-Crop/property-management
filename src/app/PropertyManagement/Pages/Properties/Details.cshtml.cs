@@ -19,9 +19,11 @@ namespace PropertyManagement.Pages.Properties
         public DetailsModel(data.context.FSPropertyManagementContext context)
         {
             _context = context;
+
         }
 
         public Property Property { get; set; }
+        public IList<Unit> Unit { get; set; }
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
@@ -32,6 +34,12 @@ namespace PropertyManagement.Pages.Properties
 
             Property = await _context.Properties
                 .Include(x => x.PropertyType).FirstOrDefaultAsync(m => m.Id == id);
+
+            Unit = await _context.Units
+                .Include(u => u.Property)
+                .Include(u => u.UnitType)
+                .Where(u => u.PropertyId == id)
+                .ToListAsync();
 
             if (Property == null)
             {
