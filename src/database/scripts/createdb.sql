@@ -35,7 +35,7 @@ CREATE TABLE Tenant
   LastName              VARCHAR(10)      NOT NULL,
   PreferredName         VARCHAR(20)      NULL    ,
   Email                 VARCHAR(30)      NOT NULL,
-  Phone                 INT              NOT NULL,
+  Phone                 VARCHAR(13)      NOT NULL,
   TenancyStartDate      DATETIME         NOT NULL,
   Status                VARCHAR(6)       NOT NULL,
   Standing              VARCHAR(7)       NOT NULL,
