@@ -28,9 +28,11 @@ namespace PropertyManagement
         {
             services.AddRazorPages();
             services.AddDbContext<FSPropertyManagementContext>(options =>
-    options.UseSqlServer(Configuration.GetConnectionString("FSPropertyManagementContext")));
+            options.UseSqlServer(Configuration.GetConnectionString("FSPropertyManagementContext")));
 
         }
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
