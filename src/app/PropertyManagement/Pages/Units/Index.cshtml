@@ -20,31 +20,22 @@
                 @Html.DisplayNameFor(model => model.Unit[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Type)
+                Unit Type
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Unit[0].Area)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].NumberofRooms)
+            <th style="white-space: nowrap">
+                # of rooms
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Unit[0].RentAmount)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Unit[0].DepositAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Furnished)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Laundry)
+                Deposit
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Unit[0].Property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].UnitType)
             </th>
             <th></th>
         </tr>
@@ -59,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                @Html.DisplayFor(modelItem => item.UnitType.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Area)
@@ -68,22 +59,13 @@
                 @Html.DisplayFor(modelItem => item.NumberofRooms)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RentAmount)
+                Rent
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DepositAmount)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Furnished)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Laundry)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Property.AddressLine1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitType.Id)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

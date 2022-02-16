@@ -24,7 +24,7 @@ namespace PropertyManagement.Pages.Units
         public IActionResult OnGet()
         {
             ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1");
-            ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Id");
+            ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
             return Page();
         }
 
