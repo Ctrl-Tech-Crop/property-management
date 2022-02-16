@@ -28,5 +28,10 @@ namespace PropertyManagement.Pages.Properties
             Property = await _context.Properties
                 .Include(x => x.PropertyType).ToListAsync();
         }
+
+        public void onPropertyRowClick(Property item)
+        {
+            Response.Redirect(string.Format("./Details?id={0}", item.Id));
+        }
     }
 }

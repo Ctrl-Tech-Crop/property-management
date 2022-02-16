@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 #nullable disable
 
@@ -20,11 +21,15 @@ namespace data.models
         public string Province { get; set; }
         public string PostalCode { get; set; }
         public string Name { get; set; }
+        [DisplayName("Total units")]
         public int TotalUnits { get; set; }
+        [DisplayName("Vacant units")]
         public int? TotalVacantUnits { get; set; }
         public bool Parking { get; set; }
         public bool Pets { get; set; }
         public bool Smoking { get; set; }
+
+        [DisplayName("Property type")]
 
         public virtual PropertyType PropertyType { get; set; }
         public virtual ICollection<Unit> Units { get; set; }
