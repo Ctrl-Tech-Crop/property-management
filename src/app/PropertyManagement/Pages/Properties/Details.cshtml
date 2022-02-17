@@ -10,165 +10,29 @@
 </div>
 
 <div class="mt-2">
-
-        <h3>Property details <a title="Edit property" class="ml-2" asp-page="./Edit" asp-route-id="@Model.Property.Id"><i class="fa-solid fa-pen-to-square larger"></i></a></h3>
-
+    <h3>Property details <a title="Edit property" class="ml-2" asp-page="./Edit" asp-route-id="@Model.Property.Id"><i class="fa-solid fa-pen-to-square larger"></i></a></h3>
     <hr />
-    <h4>
-        Property info
-    </h4>
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Property.PropertyType)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Property.PropertyType.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Property.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Property.Name)
-        </dd>
-        <dt class="col-sm-2">
-            Address
-        </dt>
-        <dd class="col-sm-10">
-           @Html.DisplayFor(model => model.Property.AddressLine1)@if(!string.IsNullOrEmpty(Model.Property.AddressLine2)){<br/>}@Html.DisplayFor(model => model.Property.AddressLine2)<br/>@Html.DisplayFor(model =>  model.Property.City), @Html.DisplayFor(model =>  model.Property.Province)<br />@Html.DisplayFor(model => model.Property.PostalCode)
-        </dd>
-         </dl>
 
-          <h4>
-        Additional info
-    </h4>
-<dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Property.TotalUnits)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Property.TotalUnits)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Property.TotalVacantUnits)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Property.TotalVacantUnits)
-        </dd>
-        <div class=col-sm-12 style="display: flex;">
-            <div>
-                @if(Model.Property.Pets)
-                {
-                    <img title="Pets allowed" src="https://img.icons8.com/material/48/000000/dog--v1.png"/>
-                }
-                @if(!Model.Property.Pets)
-                {
-                   <img title="No pets allowed" src="https://img.icons8.com/material/48/000000/no-animals.png"/>
-                }
-            </div>
-             <div class="ml-2">
-                @if(Model.Property.Parking)
-                {
-                    <img title="Parking available" src="https://img.icons8.com/material/48/000000/parking--v1.png"/>
-                } @if(!Model.Property.Parking)
-                {
-                    <img title="No parking available" src="https://img.icons8.com/material/48/000000/no-parking--v2.png"/>
-                }
-            </div>
-            <div class="ml-2">
-                @if(Model.Property.Smoking)
-                {
-                    <img title="Smoking allowed in desginated areas" src="https://img.icons8.com/material/48/000000/smoking--v1.png"/>
-                }
-                @if(!Model.Property.Smoking)
-                {
-                    <img title="No smoking" src="https://img.icons8.com/material/48/000000/no-smoking.png"/>
-                }
-            </div>
+    <div class="flex">
+        <div class="w-50">
+            @await Html.PartialAsync("Partials/_PropertyInfo", Model.Property)
         </div>
-</dl>
-        
-   
+        <div class="w-50">
+             @await Html.PartialAsync("Partials/_PropertyAdditionalInfo", Model.Property)
+        </div>
+    </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Number)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Area)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].NumberofRooms)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].RentAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].DepositAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Furnished)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Laundry)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].Property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit[0].UnitType.Name)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Unit) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Area)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberofRooms)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RentAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepositAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Furnished)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Laundry)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Property.AddressLine1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitType.Name)
-            </td>
-            <td>
-                <a asp-page="../Units/Details" asp-route-id="@item.Id">Details</a> 
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="mt-2">
+    <h3 class="flex">
+        <span>Units</span>
+        <span class="badge badge-primary span-25 ml-2">@Model.Property.Units.Count()</span>
+    </h3>
+    <p>
+    <a asp-page="/Units/Create" asp-route-id="@Model.Property.Id">
+        <i class="fa-solid fa-circle-plus xxx-large"></i>
+    </a>
+    </p>
+
+    @await Html.PartialAsync("Partials/_UnitsListPartial", Model.Property.Units.ToList())
+</div>

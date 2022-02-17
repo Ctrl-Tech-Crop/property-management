@@ -1,0 +1,24 @@
+@model data.models.Property
+<h4>
+    Property info
+</h4>
+<dl class="row">
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.PropertyType)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.PropertyType.Name)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt class="col-sm-4">
+        Address
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.AddressLine1)@if(!string.IsNullOrEmpty(Model.AddressLine2)){<br/>}@Html.DisplayFor(model => model.AddressLine2)<br/>@Html.DisplayFor(model =>  model.City), @Html.DisplayFor(model =>  model.Province)<br />@Html.DisplayFor(model => model.PostalCode)
+    </dd>
+</dl>

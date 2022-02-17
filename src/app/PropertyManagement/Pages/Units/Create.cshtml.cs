@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -21,9 +19,15 @@ namespace PropertyManagement.Pages.Units
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(Guid? id)
         {
-            ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1");
+            if (id == null)
+            {
+                return NotFound();
+            }
+            if (_context.Properties.Find(id) == null)
+                Redirect("/Error");
+            ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1", id);
             ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
             return Page();
         }
