@@ -39,7 +39,7 @@ namespace PropertyManagement.Pages.Properties
             {
                 return NotFound();
             }
-            ViewData["PropertyTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Id");
+            ViewData["PropertyTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
             return Page();
         }
 

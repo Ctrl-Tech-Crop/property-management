@@ -37,7 +37,7 @@ namespace PropertyManagement.Pages.Properties
             _context.Properties.Add(Property);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Details");
         }
     }
 }
