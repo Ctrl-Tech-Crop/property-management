@@ -111,7 +111,7 @@ div[class*="icon"] {
 [class*="flex"] {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
 }
 
 span[class*="span-25"] {

@@ -25,15 +25,19 @@ namespace PropertyManagement.Pages.Units
             {
                 return NotFound();
             }
-            if (_context.Properties.Find(id) == null)
+            var property = _context.Properties.Find(id);
+            if (property == null)
                 Redirect("/Error");
             ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1", id);
             ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
+            Property = property;
             return Page();
         }
 
         [BindProperty]
         public Unit Unit { get; set; }
+        [BindProperty]
+        public Property Property { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

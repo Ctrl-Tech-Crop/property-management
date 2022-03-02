@@ -26,7 +26,7 @@
 <div class="mt-2">
     <h3 class="flex">
         <span>Units</span>
-        <span class="badge badge-primary span-25 ml-2">@Model.Property.Units.Count()</span>
+        <span class="badge badge-primary span-25 ml-2">@Model.Property.Units?.Count()</span>
     </h3>
     <p>
     <a asp-page="/Units/Create" asp-route-id="@Model.Property.Id">
@@ -34,5 +34,5 @@
     </a>
     </p>
 
-    @await Html.PartialAsync("Partials/_UnitsListPartial", Model.Property.Units.ToList())
+    @await Html.PartialAsync("Partials/_UnitsListPartial", Model.Property.Units?.ToList())
 </div>
