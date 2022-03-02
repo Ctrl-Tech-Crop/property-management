@@ -5,11 +5,18 @@
     ViewData["Title"] = "Details";
 }
 
+<div>
+    <a title="Go back to list" asp-page="./Index"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
+</div>
+
 <h1>Details</h1>
 
 <div>
     <h4>Unit</h4>
     <hr />
+
+     @await Html.PartialAsync("Partials/_PropertyInfoCollapsable", Model.Property)
+
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Unit.Number)

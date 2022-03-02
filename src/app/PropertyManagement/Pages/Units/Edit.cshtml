@@ -5,10 +5,17 @@
     ViewData["Title"] = "Edit";
 }
 
+<div>
+    <a title="Go back to list" asp-page="./Index"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
+</div>
+
 <h1>Edit</h1>
 
 <h4>Unit</h4>
 <hr />
+
+ @await Html.PartialAsync("Partials/_PropertyInfoCollapsable", Model.Property)
+
 <div class="row">
     <div class="col-md-4">
         <form method="post">

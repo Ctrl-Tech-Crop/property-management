@@ -114,6 +114,10 @@ div[class*="icon"] {
     align-items: flex-start;
 }
 
+[class*="flex-center"] {
+    align-items: center !important;
+}
+
 span[class*="span-25"] {
     width: 25px;
     height: 25px;

@@ -24,6 +24,8 @@ namespace PropertyManagement.Pages.Units
 
         [BindProperty]
         public Unit Unit { get; set; }
+        [BindProperty]
+        public Property Property { get; set; }
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
@@ -34,12 +36,14 @@ namespace PropertyManagement.Pages.Units
 
             Unit = await _context.Units
                 .Include(u => u.Property)
+                .ThenInclude(x => x.PropertyType)
                 .Include(u => u.UnitType).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Unit == null)
             {
                 return NotFound();
             }
+            Property = Unit.Property;
             ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1");
             ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Id");
             return Page();
