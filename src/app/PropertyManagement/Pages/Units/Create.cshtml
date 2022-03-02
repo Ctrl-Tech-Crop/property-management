@@ -6,7 +6,7 @@
 }
 
 <div>
-    <a title="Go back to list" asp-page="./Index"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
+    <a title="Go back to details" asp-page="/Properties/Details" asp-route-id='@Request.Query["id"]'><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
 </div>
 
 <h1>Add a Unit</h1>
@@ -67,10 +67,6 @@
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

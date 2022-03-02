@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using data.context;
 using data.models;
 using Microsoft.AspNetCore.Authorization;
+using PropertyManagement.Helpers;
 
 namespace PropertyManagement.Pages.Properties
 {
@@ -40,6 +41,7 @@ namespace PropertyManagement.Pages.Properties
                 return NotFound();
             }
             ViewData["PropertyTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
+            ViewData["Provinces"] = new SelectList(StaticDataHelper.GetCanadianProvinces(), "Abbreviation", "Name", Property.Province);
             return Page();
         }
 
@@ -70,7 +72,7 @@ namespace PropertyManagement.Pages.Properties
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Details", new { id = Property.Id });
         }
 
         private bool PropertyExists(Guid id)

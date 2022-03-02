@@ -43,8 +43,8 @@
                     <span asp-validation-for="Property.City" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <label asp-for="Property.Province" class="control-label"></label>
-                    <input asp-for="Property.Province" class="form-control" />
+                    <label asp-for="Property.Province" class="control-label">Province</label>
+                    <select asp-for="Property.Province" class ="form-control" asp-items="ViewBag.Provinces"></select>
                     <span asp-validation-for="Property.Province" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-2">

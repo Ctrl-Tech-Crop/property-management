@@ -36,21 +36,22 @@ namespace PropertyManagement.Pages.Units
 
         [BindProperty]
         public Unit Unit { get; set; }
-        [BindProperty]
         public Property Property { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(Guid? id)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid && id == null)
             {
                 return Page();
             }
 
+            // Unit.PropertyId = (Guid)id;
+            Unit.PropertyId = (Guid)id;
             _context.Units.Add(Unit);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Properties/Details", new { id = Unit.PropertyId });
         }
     }
 }

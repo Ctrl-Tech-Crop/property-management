@@ -24,7 +24,6 @@ namespace PropertyManagement.Pages.Units
 
         [BindProperty]
         public Unit Unit { get; set; }
-        [BindProperty]
         public Property Property { get; set; }
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
@@ -78,7 +77,6 @@ namespace PropertyManagement.Pages.Units
 
             return RedirectToPage("./Index");
         }
-
         private bool UnitExists(Guid id)
         {
             return _context.Units.Any(e => e.Id == id);
