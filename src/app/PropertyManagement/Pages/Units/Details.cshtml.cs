@@ -22,6 +22,8 @@ namespace PropertyManagement.Pages.Units
         }
 
         public Unit Unit { get; set; }
+        public Property Property { get; set; }
+        public List<Tenant> Tenant { get; set; }
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
@@ -32,7 +34,15 @@ namespace PropertyManagement.Pages.Units
 
             Unit = await _context.Units
                 .Include(u => u.Property)
+                .ThenInclude(x => x.PropertyType)
                 .Include(u => u.UnitType).FirstOrDefaultAsync(m => m.Id == id);
+
+            Tenant = await _context.Tenants
+                .Include(t => t.Unit)
+                .Where(t => t.UnitId == id).ToListAsync();
+
+            Property = Unit.Property;
+
 
             if (Unit == null)
             {

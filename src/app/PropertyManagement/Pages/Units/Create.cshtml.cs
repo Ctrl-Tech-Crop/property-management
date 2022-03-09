@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -21,28 +19,39 @@ namespace PropertyManagement.Pages.Units
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(Guid? id)
         {
-            ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1");
-            ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Id");
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var property = _context.Properties.Find(id);
+            if (property == null)
+                Redirect("/Error");
+            ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1", id);
+            ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
+            Property = property;
             return Page();
         }
 
         [BindProperty]
         public Unit Unit { get; set; }
+        public Property Property { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(Guid? id)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid && id == null)
             {
                 return Page();
             }
 
+            // Unit.PropertyId = (Guid)id;
+            Unit.PropertyId = (Guid)id;
             _context.Units.Add(Unit);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Properties/Details", new { id = Unit.PropertyId });
         }
     }
 }

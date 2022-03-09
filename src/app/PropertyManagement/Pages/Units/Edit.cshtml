@@ -5,10 +5,15 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div>
+    <a title="Go back to details" asp-page="/Properties/Details" asp-route-id='@Model.Unit.PropertyId'><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
+</div>
 
-<h4>Unit</h4>
+<h1>Edit Unit</h1>
 <hr />
+
+ @await Html.PartialAsync("Partials/_PropertyInfoCollapsable", Model.Property)
+
 <div class="row">
     <div class="col-md-4">
         <form method="post">
@@ -28,11 +33,6 @@
                 <label asp-for="Unit.Name" class="control-label"></label>
                 <input asp-for="Unit.Name" class="form-control" />
                 <span asp-validation-for="Unit.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Unit.Type" class="control-label"></label>
-                <input asp-for="Unit.Type" class="form-control" />
-                <span asp-validation-for="Unit.Type" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Unit.UnitTypeId" class="control-label"></label>
@@ -64,20 +64,16 @@
                     <input class="form-check-input" asp-for="Unit.Furnished" /> @Html.DisplayNameFor(model => model.Unit.Furnished)
                 </label>
             </div>
-            <div class="form-group">
-                <label asp-for="Unit.Laundry" class="control-label"></label>
-                <input asp-for="Unit.Laundry" class="form-control" />
-                <span asp-validation-for="Unit.Laundry" class="text-danger"></span>
+             <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Unit.Laundry" /> @Html.DisplayNameFor(model => model.Unit.Laundry)
+                </label>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

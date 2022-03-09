@@ -1,0 +1,62 @@
+@model IList<data.models.Unit>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th>
+                Unit Type
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Area)
+            </th>
+            <th style="white-space: nowrap">
+                # of rooms
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().RentAmount)
+            </th>
+            <th>
+                Deposit
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Property)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr  class="tr-hoverable" onclick="location.href = '/Units/Details?id=@item.Id'">
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberofRooms)
+            </td>
+            <td>
+                Rent
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepositAmount)
+            </td>
+            <td>
+                <a asp-page="/Units/Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square xx-large"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

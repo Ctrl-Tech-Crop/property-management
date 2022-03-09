@@ -2,85 +2,91 @@
 @model PropertyManagement.Pages.Properties.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add a Property";
 }
 
-<h1>Create</h1>
+<div>
+    <a title="Go back to list" asp-page="./Index"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
+</div>
 
-<h4>Property</h4>
+<h1>Add a Property</h1>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Property.PropertyTypeId" class="control-label"></label>
-                <select asp-for="Property.PropertyTypeId" class ="form-control" asp-items="ViewBag.PropertyTypeId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Property.AddressLine1" class="control-label"></label>
-                <input asp-for="Property.AddressLine1" class="form-control" />
-                <span asp-validation-for="Property.AddressLine1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Property.AddressLine2" class="control-label"></label>
-                <input asp-for="Property.AddressLine2" class="form-control" />
-                <span asp-validation-for="Property.AddressLine2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Property.City" class="control-label"></label>
-                <input asp-for="Property.City" class="form-control" />
-                <span asp-validation-for="Property.City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Property.Province" class="control-label"></label>
-                <input asp-for="Property.Province" class="form-control" />
-                <span asp-validation-for="Property.Province" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Property.PostalCode" class="control-label"></label>
-                <input asp-for="Property.PostalCode" class="form-control" />
-                <span asp-validation-for="Property.PostalCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+
+            <div class="form-group col-md-4">
                 <label asp-for="Property.Name" class="control-label"></label>
                 <input asp-for="Property.Name" class="form-control" />
                 <span asp-validation-for="Property.Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group col-md-4">
+                <label asp-for="Property.PropertyTypeId" class="control-label">Property Type</label>
+                <select asp-for="Property.PropertyTypeId" class ="form-control" asp-items="ViewBag.PropertyTypeId"></select>
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="Property.AddressLine1" class="control-label">Address</label>
+                <input asp-for="Property.AddressLine1" class="form-control" />
+                <span asp-validation-for="Property.AddressLine1" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="Property.AddressLine2" class="control-label">Address 2</label>
+                <input asp-for="Property.AddressLine2" class="form-control" />
+                <span asp-validation-for="Property.AddressLine2" class="text-danger"></span>
+            </div>
+             <div class="form-row col-md-12">
+                <div class="form-group col-md-6">
+                    <label asp-for="Property.City" class="control-label"></label>
+                    <input asp-for="Property.City" class="form-control" />
+                    <span asp-validation-for="Property.City" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Property.Province" class="control-label">Province</label>
+                    <select asp-for="Property.Province" class ="form-control" asp-items="ViewBag.Provinces"></select>
+                    <span asp-validation-for="Property.Province" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="Property.PostalCode" class="control-label"></label>
+                    <input asp-for="Property.PostalCode" class="form-control" />
+                    <span asp-validation-for="Property.PostalCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-2">
                 <label asp-for="Property.TotalUnits" class="control-label"></label>
                 <input asp-for="Property.TotalUnits" class="form-control" />
                 <span asp-validation-for="Property.TotalUnits" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-2">
                 <label asp-for="Property.TotalVacantUnits" class="control-label"></label>
                 <input asp-for="Property.TotalVacantUnits" class="form-control" />
                 <span asp-validation-for="Property.TotalVacantUnits" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+
+            <div class="form-group form-check col">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Property.Parking" /> @Html.DisplayNameFor(model => model.Property.Parking)
                 </label>
             </div>
-            <div class="form-group form-check">
+
+            <div class="form-group form-check col">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Property.Pets" /> @Html.DisplayNameFor(model => model.Property.Pets)
                 </label>
             </div>
-            <div class="form-group form-check">
+
+             <div class="form-group form-check col">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Property.Smoking" /> @Html.DisplayNameFor(model => model.Property.Smoking)
                 </label>
             </div>
-            <div class="form-group">
+  
+            <div class="form-group col-md-4">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
 using data.models;
+using System;
+using PropertyManagement.Helpers;
 
 namespace PropertyManagement.Pages.Properties
 {
@@ -20,6 +22,7 @@ namespace PropertyManagement.Pages.Properties
         public IActionResult OnGet()
         {
             ViewData["PropertyTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
+            ViewData["Provinces"] = new SelectList(StaticDataHelper.GetCanadianProvinces(), "Abbreviation", "Name");
             return Page();
         }
 
@@ -33,11 +36,12 @@ namespace PropertyManagement.Pages.Properties
             {
                 return Page();
             }
+            Property.Id = Guid.NewGuid();
 
             _context.Properties.Add(Property);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Details", new { id = Property.Id });
         }
     }
 }

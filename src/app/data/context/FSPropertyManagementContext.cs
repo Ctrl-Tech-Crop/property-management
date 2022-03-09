@@ -182,10 +182,6 @@ namespace data.context
 
                 entity.Property(e => e.DepositAmount).HasColumnType("decimal(18, 0)");
 
-                entity.Property(e => e.Laundry)
-                    .HasMaxLength(8)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Name)
                     .HasMaxLength(30)
                     .IsUnicode(false);
@@ -197,10 +193,8 @@ namespace data.context
 
                 entity.Property(e => e.RentAmount).HasColumnType("decimal(18, 0)");
 
-                entity.Property(e => e.Type)
-                    .IsRequired()
-                    .HasMaxLength(25)
-                    .IsUnicode(false);
+                entity.Property(e => e.Furnished).IsRequired();
+                entity.Property(e => e.Laundry).IsRequired();
 
                 entity.HasOne(d => d.Property)
                     .WithMany(p => p.Units)

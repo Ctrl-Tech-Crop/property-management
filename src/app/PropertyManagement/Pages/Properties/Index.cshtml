@@ -5,77 +5,58 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Properties</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">
+        <i class="fa-solid fa-circle-plus xxx-large"></i>
+    </a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Property[0].AddressLine1)
+             <th>
+                Type
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Property[0].AddressLine2)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Property[0].City)
+                Address
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Property[0].Province)
+                Vacant units
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Property[0].PostalCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Property[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Property[0].TotalUnits)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Property[0].TotalVacantUnits)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Property[0].PropertyType.Name)
+                Total units
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Property) {
-        <tr>
+    
+        <tr class="tr-hoverable" onclick="location.href = '/Properties/Details?id=@item.Id'">
             <td>
-                @Html.DisplayFor(modelItem => item.AddressLine1)
+                @Html.DisplayFor(modelItem => item.PropertyType.Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressLine2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Province)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostalCode)
-            </td>
-            <td>
+             <td>
                 @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLine1)@if(!string.IsNullOrEmpty(item.AddressLine2)){<br/>}@Html.DisplayFor(modelItem => item.AddressLine2)<br/>@Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.Province)<br />@Html.DisplayFor(modelItem => item.PostalCode) 
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.TotalVacantUnits)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TotalUnits)
             </td>
+           
+            
             <td>
-                @Html.DisplayFor(modelItem => item.TotalVacantUnits)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PropertyType.Name)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">View</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square xx-large"></i></a>
             </td>
         </tr>
 }

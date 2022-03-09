@@ -19,12 +19,13 @@ namespace PropertyManagement.Pages.Units
         public IndexModel(data.context.FSPropertyManagementContext context)
         {
             _context = context;
+
         }
 
         public IList<Unit> Unit { get; set; }
 
         public async Task OnGetAsync()
-        {
+        { 
             Unit = await _context.Units
                 .Include(u => u.Property)
                 .Include(u => u.UnitType).ToListAsync();

@@ -1,0 +1,50 @@
+@model data.models.Property
+<h4>
+    Additional info
+</h4>
+
+<dl class="row">
+<dt class="col-sm-4">
+    @Html.DisplayNameFor(model => model.TotalUnits)
+</dt>
+<dd class="col-sm-8">
+    @Html.DisplayFor(model => model.TotalUnits)
+</dd>
+<dt class="col-sm-4">
+    @Html.DisplayNameFor(model => model.TotalVacantUnits)
+</dt>
+<dd class="col-sm-6">
+    @Html.DisplayFor(model => model.TotalVacantUnits)
+</dd>
+<div class="col-sm-6 flex">
+    <div>
+        @if(Model.Pets)
+        {
+            <img title="Pets allowed" src="https://img.icons8.com/material/48/000000/dog--v1.png"/>
+        }
+        @if(!Model.Pets)
+        {
+        <img title="No pets allowed" src="https://img.icons8.com/material/48/000000/no-animals.png"/>
+        }
+    </div>
+    <div class="ml-2">
+        @if(Model.Parking)
+        {
+            <img title="Parking available" src="https://img.icons8.com/material/48/000000/parking--v1.png"/>
+        } @if(!Model.Parking)
+        {
+            <img title="No parking available" src="https://img.icons8.com/material/48/000000/no-parking--v2.png"/>
+        }
+    </div>
+    <div class="ml-2">
+        @if(Model.Smoking)
+        {
+            <img title="Smoking allowed in desginated areas" src="https://img.icons8.com/material/48/000000/smoking--v1.png"/>
+        }
+        @if(!Model.Smoking)
+        {
+            <img title="No smoking" src="https://img.icons8.com/material/48/000000/no-smoking.png"/>
+        }
+    </div>
+</div>
+</dl>
