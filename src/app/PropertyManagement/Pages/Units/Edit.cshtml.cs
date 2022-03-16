@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using data.context;
 using data.models;
 using Microsoft.AspNetCore.Authorization;
+using PropertyManagement.Helpers;
 
 namespace PropertyManagement.Pages.Units
 {
@@ -44,6 +45,7 @@ namespace PropertyManagement.Pages.Units
             Property = Unit.Property;
             ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1");
             ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Id");
+            ViewData["Laundry"] = new SelectList(StaticDataHelper.GetLaundries(), "LaundryType", "LaundryType", Unit.Laundry);
             return Page();
         }
 

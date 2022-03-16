@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Unit.UnitTypeId" class="control-label">Unit type</label>
-                <select asp-for="Unit.UnitTypeId" class ="form-control" asp-items="ViewBag.UnitTypeId"></select>
+                <select asp-for="Unit.UnitTypeId" class="form-control" asp-items="ViewBag.UnitTypeId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Unit.Area" class="control-label"></label>
@@ -57,10 +57,10 @@
                     <input class="form-check-input" asp-for="Unit.Furnished" /> @Html.DisplayNameFor(model => model.Unit.Furnished)
                 </label>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Unit.Laundry" /> @Html.DisplayNameFor(model => model.Unit.Laundry)
-                </label>
+            <div class="form-group">
+                <label asp-for="Unit.Laundry" class="control-label">Laundry</label>
+                <select asp-for="Unit.Laundry" class="form-control" asp-items="ViewBag.Laundry"></select>
+                <span asp-validation-for="Unit.Laundry" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

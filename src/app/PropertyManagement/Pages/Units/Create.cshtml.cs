@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using data.context;
 using data.models;
 using Microsoft.AspNetCore.Authorization;
+using PropertyManagement.Helpers;
 
 namespace PropertyManagement.Pages.Units
 {
@@ -30,6 +31,7 @@ namespace PropertyManagement.Pages.Units
                 Redirect("/Error");
             ViewData["PropertyId"] = new SelectList(_context.Properties, "Id", "AddressLine1", id);
             ViewData["UnitTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
+            ViewData["Laundry"] = new SelectList(StaticDataHelper.GetLaundries(), "LaundryType", "LaundryType");
             Property = property;
             return Page();
         }

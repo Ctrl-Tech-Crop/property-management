@@ -20,15 +20,16 @@ namespace data.models
         public string Number { get; set; }
         public string Name { get; set; }
         public Guid UnitTypeId { get; set; }
-        [Required]
+        [Required, Range(1, Int32.MaxValue, ErrorMessage = "Value should be greater than or equal to 1. Please enter positive numbers.")]
         public decimal Area { get; set; }
-        [Required]
+        [Required, Range(1, Int32.MaxValue, ErrorMessage = "Value should be greater than or equal to 1. Please enter positive numbers.")]
         public int NumberofRooms { get; set; }
-        [Required]
+        [Required, Range(1, Int32.MaxValue, ErrorMessage = "Value should be greater than or equal to 1. Please enter positive numbers.")]
         public decimal RentAmount { get; set; }
-        [Required]
+        [Required, Range(1, Int32.MaxValue, ErrorMessage = "Value should be greater than or equal to 1. Please enter positive numbers.")]
         public decimal DepositAmount { get; set; }
         public bool Furnished { get; set; }
+
         public string Laundry { get; set; } // 3 options not bool
 
         public virtual Property Property { get; set; }

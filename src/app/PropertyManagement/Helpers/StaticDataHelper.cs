@@ -23,5 +23,15 @@ namespace PropertyManagement.Helpers
                 new Province {Abbreviation="YT", Name="Yukon Territory"},
             };
         }
+
+        public static List<Laundry> GetLaundries()
+        {
+            return new List<Laundry>()
+            {
+                new Laundry {LaundryType="None"},
+                new Laundry {LaundryType="Ensuite"},
+                new Laundry {LaundryType="Shared"},
+            };
+        }
     }
 }
