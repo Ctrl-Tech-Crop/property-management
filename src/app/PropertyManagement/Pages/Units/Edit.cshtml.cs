@@ -35,7 +35,6 @@ namespace PropertyManagement.Pages.Units
 
             Unit = await _context.Units
                 .Include(u => u.Property)
-                .ThenInclude(x => x.PropertyType)
                 .Include(u => u.UnitType).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Unit == null)

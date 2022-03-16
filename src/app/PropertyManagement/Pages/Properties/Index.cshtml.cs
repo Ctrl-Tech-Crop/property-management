@@ -26,7 +26,7 @@ namespace PropertyManagement.Pages.Properties
         public async Task OnGetAsync()
         {
             Property = await _context.Properties
-                .Include(x => x.PropertyType).ToListAsync();
+                .ToListAsync();
         }
 
         public void onPropertyRowClick(Property item)

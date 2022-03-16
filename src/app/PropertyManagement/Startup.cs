@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using data.context;
+using data.models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -67,7 +68,7 @@ namespace PropertyManagement
         {
             //initializing custom roles 
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            var UserManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
             string[] roleNames = { "Admin", "Property Manager" };
             IdentityResult roleResult;
 
@@ -89,10 +90,11 @@ namespace PropertyManagement
             if (_user == null)
             {
                 //Here you could create the super admin who will maintain the web app
-                var poweruser = new IdentityUser
+                var poweruser = new ApplicationUser
                 {
                     UserName = "Admin",
                     Email = "admin@email.com",
+
                 };
                 string adminPassword = "P@$$w0rd";
 

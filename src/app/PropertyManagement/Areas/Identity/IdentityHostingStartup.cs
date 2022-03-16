@@ -1,5 +1,6 @@
 using System;
 using data.context;
+using data.models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -20,7 +21,7 @@ namespace PropertyManagement.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("FSPropertyManagementContext")));
 
-                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                     .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<FSPropertyManagementIdentityContext>();
 

@@ -29,7 +29,7 @@ namespace data.models
         [Required]
         public decimal DepositAmount { get; set; }
         public bool Furnished { get; set; }
-        public bool Laundry { get; set; } // 3 options not bool
+        public string Laundry { get; set; } // 3 options not bool
 
         public virtual Property Property { get; set; }
         public virtual PropertyType UnitType { get; set; }

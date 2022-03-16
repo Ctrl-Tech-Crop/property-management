@@ -32,7 +32,7 @@ namespace PropertyManagement.Pages.Properties
             }
 
             Property = await _context.Properties
-                .Include(x => x.PropertyType).FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (Property == null)
             {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using data.models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -70,11 +70,12 @@ namespace data.context
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.PropertyType)
-                    .WithMany(p => p.Properties)
-                    .HasForeignKey(d => d.PropertyTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_PropertyType_TO_Property");
+                //entity.HasOne(e => e.Company)
+                //.WithMany(p => p.Properties)
+                //.HasForeignKey(e => e.CompanyID)
+                //.OnDelete(DeleteBehavior.ClientSetNull)
+                //.HasConstraintName("FK_Company_TO_Property");
+                             
             });
 
             modelBuilder.Entity<PropertyType>(entity =>
@@ -170,6 +171,13 @@ namespace data.context
                     .HasForeignKey(d => d.UnitId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Unit_TO_Tenant");
+
+
+                //entity.HasOne(e => e.Company)
+                //.WithMany(p => p.Tenants)
+                //.HasForeignKey(e => e.CompanyID)
+                //.OnDelete(DeleteBehavior.ClientSetNull)
+                //.HasConstraintName("FK_Company_TO_Tenant");
             });
 
             modelBuilder.Entity<Unit>(entity =>
