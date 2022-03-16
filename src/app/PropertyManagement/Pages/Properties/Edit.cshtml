@@ -24,7 +24,7 @@
             </div>
 
             <div class="form-group col-md-4">
-                <label asp-for="Property.PropertyDescription" class="control-label">Property Type</label>
+                <label asp-for="Property.PropertyDescription" class="control-label"></label>
                 <input asp-for="Property.PropertyDescription" class ="form-control"/>
             </div>
             <div class="form-group col-md-12">
@@ -50,18 +50,18 @@
                 </div>
                 <div class="form-group col-md-2">
                     <label asp-for="Property.PostalCode" class="control-label"></label>
-                    <input asp-for="Property.PostalCode" class="form-control" />
+                    <input asp-for="Property.PostalCode" class="form-control"/>
                     <span asp-validation-for="Property.PostalCode" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group col-md-2">
                 <label asp-for="Property.TotalUnits" class="control-label"></label>
-                <input asp-for="Property.TotalUnits" class="form-control" />
+                <input asp-for="Property.TotalUnits" class="form-control" min=0/>
                 <span asp-validation-for="Property.TotalUnits" class="text-danger"></span>
             </div>
             <div class="form-group col-md-2">
                 <label asp-for="Property.TotalVacantUnits" class="control-label"></label>
-                <input asp-for="Property.TotalVacantUnits" class="form-control" />
+                <input asp-for="Property.TotalVacantUnits" class="form-control" min=0/>
                 <span asp-validation-for="Property.TotalVacantUnits" class="text-danger"></span>
             </div>
 

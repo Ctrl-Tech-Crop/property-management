@@ -26,14 +26,14 @@ namespace data.models
         public string City { get; set; }
         [Required]
         public string Province { get; set; }
-        [Required]
-        [RegularExpression(@"^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$", ErrorMessage = "Follow C#C-#C# format.")]
+        [Required, MaxLength(6)]
+        [RegularExpression(@"^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$", ErrorMessage = "Follow C#C#C# format.")]
         public string PostalCode { get; set; }
         public string Name { get; set; }
-        [Required]
+        [Required, Range(0, 2000, ErrorMessage = "Total Units must be a positive value")]
         [DisplayName("Total units")]
         public int TotalUnits { get; set; }
-        [Required, Range(0,2000, ErrorMessage = "Total Units must be a positive value")]
+        [Required, Range(0,2000, ErrorMessage = "Total Vacant Units must be a positive value")]
         [DisplayName("Vacant units")]
         public int? TotalVacantUnits { get; set; }
         [Required]
