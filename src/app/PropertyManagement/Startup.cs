@@ -84,28 +84,29 @@ namespace PropertyManagement
             }
 
             // find the user with the admin email 
-            var _user = await UserManager.FindByEmailAsync("admin@email.com");
+            //var _user = await UserManager.FindByEmailAsync("admin@email.com");
 
             // check if the user exists
-            if (_user == null)
-            {
-                //Here you could create the super admin who will maintain the web app
-                var poweruser = new ApplicationUser
-                {
-                    UserName = "Admin",
-                    Email = "admin@email.com",
+            // if (_user == null)
+            // {
+            //     //Here you could create the super admin who will maintain the web app
+            //     var poweruser = new ApplicationUser
+            //     {
+            //         UserName = "Admin",
+            //         Email = "admin@email.com",
+            //         
 
-                };
-                string adminPassword = "P@$$w0rd";
+            //     };
+            //     string adminPassword = "P@$$w0rd";
 
-                var createPowerUser = await UserManager.CreateAsync(poweruser, adminPassword);
-                if (createPowerUser.Succeeded)
-                {
-                    //here we tie the new user to the role
-                    await UserManager.AddToRoleAsync(poweruser, "Admin");
+            //     var createPowerUser = await UserManager.CreateAsync(poweruser, adminPassword);
+            //     if (createPowerUser.Succeeded)
+            //     {
+            //         //here we tie the new user to the role
+            //         await UserManager.AddToRoleAsync(poweruser, "Admin");
 
-                }
-            }
+            //     }
+            // }
         }
     }
 }
