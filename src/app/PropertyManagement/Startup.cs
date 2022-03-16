@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using data.context;
 using data.models;
+using data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +32,9 @@ namespace PropertyManagement
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddDbContext<FSPropertyManagementContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("FSPropertyManagementContext")));
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.Configure<AuthMessageSenderOptions>(Configuration);
+
 
         }
 
