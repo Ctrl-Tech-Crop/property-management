@@ -2,6 +2,12 @@
 CREATE DATABASE PropertyManagement
 GO
 USE PropertyManagement  
+CREATE TABLE Company(
+  Id				uniqueidentifier NOT NULL DEFAULT NEWID(),
+  CompanyName		VARCHAR(30) NOT NULL,
+  PRIMARY KEY (Id)
+);
+
 CREATE TABLE Property
 (
   Id					uniqueidentifier NOT NULL DEFAULT NEWID(),
@@ -52,7 +58,7 @@ CREATE TABLE Tenant
   City                  VARCHAR(30)      NOT NULL,
   Province              VARCHAR(10)      NOT NULL,
   Country               VARCHAR(10)      NOT NULL,
-  PostalCode            CHAR(6)          NOT NULL,
+  PostalCode            CHAR(7)          NOT NULL,
   CompanyID				uniqueidentifier NULL,
   PRIMARY KEY (Id)
 );
@@ -73,11 +79,7 @@ CREATE TABLE Unit
   PRIMARY KEY (Id)
 );
 
-CREATE TABLE Company(
-  Id				uniqueidentifier NOT NULL DEFAULT NEWID(),
-  CompanyName		VARCHAR(30) NOT NULL,
-  PRIMARY KEY (Id)
-);
+
 
 ALTER TABLE Unit
   ADD CONSTRAINT FK_Property_TO_Unit
