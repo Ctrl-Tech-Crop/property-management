@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using data.models;
 using System;
 using PropertyManagement.Helpers;
+using System.Linq;
 
 namespace PropertyManagement.Pages.Properties
 {
@@ -21,7 +22,6 @@ namespace PropertyManagement.Pages.Properties
 
         public IActionResult OnGet()
         {
-            ViewData["PropertyTypeId"] = new SelectList(_context.PropertyTypes, "Id", "Name");
             ViewData["Provinces"] = new SelectList(StaticDataHelper.GetCanadianProvinces(), "Abbreviation", "Name");
             return Page();
         }
@@ -37,6 +37,7 @@ namespace PropertyManagement.Pages.Properties
                 return Page();
             }
             Property.Id = Guid.NewGuid();
+            //Property.CompanyID = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "FlamingSoft").Value);
 
             _context.Properties.Add(Property);
             await _context.SaveChangesAsync();

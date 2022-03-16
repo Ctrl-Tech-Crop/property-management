@@ -47,7 +47,10 @@ namespace data.models
         [Required]
         [RegularExpression(@"^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$", ErrorMessage = "Follow C#C-#C# format.")]
         public string PostalCode { get; set; }
-
         public virtual Unit Unit { get; set; }
+
+
+        //public Guid CompanyID { get; set; }
+        //public virtual Company Company { get; set; }
     }
 }

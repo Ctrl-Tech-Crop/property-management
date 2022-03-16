@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using data.models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace data.context
 {
-    public class FSPropertyManagementIdentityContext : IdentityDbContext<IdentityUser>
+    public class FSPropertyManagementIdentityContext : IdentityDbContext<ApplicationUser>
     {
         public FSPropertyManagementIdentityContext(DbContextOptions<FSPropertyManagementIdentityContext> options)
             : base(options)

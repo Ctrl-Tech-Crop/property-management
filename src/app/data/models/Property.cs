@@ -15,8 +15,10 @@ namespace data.models
         }
 
         public Guid Id { get; set; }
-        [Required]
-        public Guid PropertyTypeId { get; set; }
+
+        
+        [DisplayName("Property description")]
+        public string PropertyDescription { get; set; }
         [Required]
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
@@ -41,9 +43,11 @@ namespace data.models
         [Required]
         public bool Smoking { get; set; }
 
-        [DisplayName("Property type")]
 
-        public virtual PropertyType PropertyType { get; set; }
         public virtual ICollection<Unit> Units { get; set; }
+
+
+        //public Guid CompanyID { get; set; }
+        //public virtual Company Company { get; set; }
     }
 }
