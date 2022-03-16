@@ -17,7 +17,7 @@ namespace data.models
         public Guid Id { get; set; }
 
         
-        [DisplayName("Property description")]
+        [DisplayName("Property Description")]
         public string PropertyDescription { get; set; }
         [Required]
         public string AddressLine1 { get; set; }
@@ -33,7 +33,7 @@ namespace data.models
         [Required]
         [DisplayName("Total units")]
         public int TotalUnits { get; set; }
-        [Required]
+        [Required, Range(0,2000, ErrorMessage = "Total Units must be a positive value")]
         [DisplayName("Vacant units")]
         public int? TotalVacantUnits { get; set; }
         [Required]
