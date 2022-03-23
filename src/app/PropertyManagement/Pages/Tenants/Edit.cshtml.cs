@@ -10,8 +10,7 @@ using data.context;
 using data.models;
 using Microsoft.AspNetCore.Authorization;
 using PropertyManagement.Helpers;
-
-
+using data.models.POCO;
 
 namespace PropertyManagement.Pages.Tenants
 {
@@ -42,7 +41,7 @@ namespace PropertyManagement.Pages.Tenants
             {
                 return NotFound();
             }
-            ViewData["UnitId"] = new SelectList(_context.Units, "Id", "Number");
+            ViewData["Units"] = new SelectList(GetUnitsListAsync(), "Id", "DisplayText", Tenant.UnitId);
             ViewData["Provinces"] = new SelectList(StaticDataHelper.GetCanadianProvinces(), "Abbreviation", "Name");
             ViewData["Status"] = new SelectList(StaticDataHelper.GetStatus(), "StatusType", "StatusType", Tenant.Status);
             ViewData["Standing"] = new SelectList(StaticDataHelper.GetStandings(), "StandingType", "StandingType", Tenant.Standing);
@@ -83,6 +82,20 @@ namespace PropertyManagement.Pages.Tenants
         private bool TenantExists(Guid id)
         {
             return _context.Tenants.Any(e => e.Id == id);
+        }
+        private List<UnitSelectItem> GetUnitsListAsync()
+        {
+            List<UnitSelectItem> unitSelectItems = new List<UnitSelectItem>();
+            foreach (Unit unit in _context.Units.Include(x => x.Property))
+            {
+                UnitSelectItem unitSelectItem = new UnitSelectItem()
+                {
+                    Id = unit.Id,
+                    DisplayText = string.Format("#{0} {1} {2}, {3}, {4}, {5}", unit.Number, unit.Property.AddressLine1, unit.Property.AddressLine2, unit.Property.City, unit.Property.Province, unit.Property.PostalCode)
+                };
+                unitSelectItems.Add(unitSelectItem);
+            }
+            return unitSelectItems;
         }
     }
 }
