@@ -15,39 +15,39 @@
  @await Html.PartialAsync("Partials/_PropertyInfoCollapsable", Model.Property)
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label asp-for="Unit.Number" class="control-label">Unit number</label>
                 <input asp-for="Unit.Number" class="form-control" />
                 <span asp-validation-for="Unit.Number" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label asp-for="Unit.Name" class="control-label">Unit name</label>
                 <input asp-for="Unit.Name" class="form-control" />
                 <span asp-validation-for="Unit.Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label asp-for="Unit.UnitTypeId" class="control-label">Unit type</label>
                 <select asp-for="Unit.UnitTypeId" class="form-control" asp-items="ViewBag.UnitTypeId"></select>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label asp-for="Unit.Area" class="control-label"></label>
                 <input asp-for="Unit.Area" class="form-control" />
                 <span asp-validation-for="Unit.Area" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label asp-for="Unit.NumberofRooms" class="control-label"># of rooms</label>
                 <input asp-for="Unit.NumberofRooms" class="form-control" />
                 <span asp-validation-for="Unit.NumberofRooms" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label asp-for="Unit.RentAmount" class="control-label">Rent amount</label>
                 <input asp-for="Unit.RentAmount" class="form-control" />
                 <span asp-validation-for="Unit.RentAmount" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label asp-for="Unit.DepositAmount" class="control-label">Deposit amount</label>
                 <input asp-for="Unit.DepositAmount" class="form-control" />
                 <span asp-validation-for="Unit.DepositAmount" class="text-danger"></span>
@@ -57,7 +57,7 @@
                     <input class="form-check-input" asp-for="Unit.Furnished" /> @Html.DisplayNameFor(model => model.Unit.Furnished)
                 </label>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-2">
                 <label asp-for="Unit.Laundry" class="control-label">Laundry</label>
                 <select asp-for="Unit.Laundry" class="form-control" asp-items="ViewBag.Laundry"></select>
                 <span asp-validation-for="Unit.Laundry" class="text-danger"></span>

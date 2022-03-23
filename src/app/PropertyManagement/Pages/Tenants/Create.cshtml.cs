@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using data.context;
 using data.models;
 using Microsoft.AspNetCore.Authorization;
+using PropertyManagement.Helpers;
 
 namespace PropertyManagement.Pages.Tenants
 {
@@ -24,6 +25,12 @@ namespace PropertyManagement.Pages.Tenants
         public IActionResult OnGet()
         {
             ViewData["UnitId"] = new SelectList(_context.Units, "Id", "Number");
+
+            ViewData["Provinces"] = new SelectList(StaticDataHelper.GetCanadianProvinces(), "Abbreviation", "Name");
+            ViewData["Status"] = new SelectList(StaticDataHelper.GetStatus(), "StatusType", "StatusType");
+            ViewData["Standing"] = new SelectList(StaticDataHelper.GetStandings(), "StandingType", "StandingType");
+
+
             return Page();
         }
 
