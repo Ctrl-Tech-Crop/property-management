@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -16,7 +16,7 @@ namespace data.models
 
         public Guid Id { get; set; }
 
-        
+
         [DisplayName("Property Description")]
         public string PropertyDescription { get; set; }
         [Required]
@@ -29,11 +29,12 @@ namespace data.models
         [Required, MaxLength(6)]
         [RegularExpression(@"^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$", ErrorMessage = "Follow C#C#C# format.")]
         public string PostalCode { get; set; }
+        [Required]
         public string Name { get; set; }
         [Required, Range(0, 2000, ErrorMessage = "Total Units must be a positive value")]
         [DisplayName("Total units")]
         public int TotalUnits { get; set; }
-        [Required, Range(0,2000, ErrorMessage = "Total Vacant Units must be a positive value")]
+        [Required, Range(0, 2000, ErrorMessage = "Total Vacant Units must be a positive value")]
         [DisplayName("Vacant units")]
         public int? TotalVacantUnits { get; set; }
         [Required]

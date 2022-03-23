@@ -123,3 +123,7 @@ span[class*="span-25"] {
     height: 25px;
     font-size: medium;
 }
+
+[class*="pl-0"] {
+    padding-left: 0px !important;
+}
