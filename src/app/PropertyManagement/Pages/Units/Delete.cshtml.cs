@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using data.context;
 using data.models;
 using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations;
 
 namespace PropertyManagement.Pages.Units
 {
@@ -23,6 +24,9 @@ namespace PropertyManagement.Pages.Units
 
         [BindProperty]
         public Unit Unit { get; set; }
+        [BindProperty]
+        [Required(ErrorMessage = "Unit number is required")]
+        public string Number { get; set; }
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
@@ -44,15 +48,29 @@ namespace PropertyManagement.Pages.Units
 
         public async Task<IActionResult> OnPostAsync(Guid? id)
         {
+
             if (id == null)
             {
                 return NotFound();
             }
 
-            Unit = await _context.Units.FindAsync(id);
+            Unit = await _context.Units.Where(x => x.Id == id)
+                                       .Include(t => t.Tenants).FirstOrDefaultAsync();
+
+            if (Unit == null)
+                return NotFound();
+
+            if (Number != Unit.Number)
+            {
+                ModelState.AddModelError("Number", "Number does not match");
+                return Page();
+            }
 
             if (Unit != null)
             {
+                foreach (Tenant tenant in Unit.Tenants)
+                    _context.Tenants.Remove(tenant);
+
                 _context.Units.Remove(Unit);
                 await _context.SaveChangesAsync();
             }

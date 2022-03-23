@@ -27,6 +27,7 @@
                 @Html.DisplayNameFor(model => model.First().Property)
             </th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -55,6 +56,9 @@
             </td>
             <td>
                 <a asp-page="/Units/Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square xx-large"></i></a>
+            </td>
+            <td>
+                <a title="Delete Unit" class="ml-2" asp-page="/Units/Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash xx-large"></i></a>
             </td>
         </tr>
 }

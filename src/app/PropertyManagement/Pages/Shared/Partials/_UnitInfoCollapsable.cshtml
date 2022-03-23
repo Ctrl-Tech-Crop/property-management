@@ -1,0 +1,29 @@
+@model data.models.Unit
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <p>
+            <button id="viewUnitDetailsToggleBtn" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#unitCollapsePanel" aria-expanded="false" aria-controls="unitCollapsePanel">Show unit details</button>
+        </p>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="collapse multi-collapse" id="unitCollapsePanel">
+                <div class="card card-body">
+                    <div class="mt-2">
+                        <h3>Unit details</h3>
+                        <hr />
+
+                        <div class="flex">
+                            <div class="w-50">
+                                @await Html.PartialAsync("Partials/_UnitInfo", Model)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

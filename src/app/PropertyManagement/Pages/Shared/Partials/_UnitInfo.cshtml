@@ -1,0 +1,69 @@
+@model data.models.Unit
+
+<h4>
+    Unit Information
+</h4>
+ <dl class="row">
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.NumberofRooms)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.NumberofRooms)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.RentAmount)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.RentAmount)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.DepositAmount)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DepositAmount)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Furnished)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Furnished)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Laundry)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Laundry)
+        </dd>
+   
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Property)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Property.AddressLine1)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.UnitType)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+       
+    </dl>
