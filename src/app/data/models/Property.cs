@@ -12,6 +12,7 @@ namespace data.models
         public Property()
         {
             Units = new HashSet<Unit>();
+
         }
 
         public Guid Id { get; set; }
@@ -33,9 +34,9 @@ namespace data.models
         [Required, Range(0, 2000, ErrorMessage = "Total Units must be a positive value")]
         [DisplayName("Total units")]
         public int TotalUnits { get; set; }
-        [Required, Range(0,2000, ErrorMessage = "Total Vacant Units must be a positive value")]
+        [Required, Range(0, 2000, ErrorMessage = "Total Vacant Units must be a positive value")]
         [DisplayName("Vacant units")]
-        public int? TotalVacantUnits { get; set; }
+        public int TotalVacantUnits { get; set; }
         [Required]
         public bool Parking { get; set; }
         [Required]

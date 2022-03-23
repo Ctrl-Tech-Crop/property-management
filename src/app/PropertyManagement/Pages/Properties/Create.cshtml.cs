@@ -28,14 +28,24 @@ namespace PropertyManagement.Pages.Properties
 
         [BindProperty]
         public Property Property { get; set; }
+        [BindProperty]
+        public string VacantUnitErrorMessage { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            VacantUnitErrorMessage = "";
             if (!ModelState.IsValid)
             {
                 return Page();
             }
+            if (Property.TotalVacantUnits >= Property.TotalUnits)
+            {
+                VacantUnitErrorMessage = "Value can't be greater than Total Units";
+                ViewData["Provinces"] = new SelectList(StaticDataHelper.GetCanadianProvinces(), "Abbreviation", "Name");
+                return Page();
+            }
+
             Property.Id = Guid.NewGuid();
             //Property.CompanyID = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "FlamingSoft").Value);
 
