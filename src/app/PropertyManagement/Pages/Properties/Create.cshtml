@@ -58,10 +58,11 @@
                 <input asp-for="Property.TotalUnits" class="form-control" min=0/>
                 <span asp-validation-for="Property.TotalUnits" class="text-danger"></span>
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-2">Property
                 <label asp-for="Property.TotalVacantUnits" class="control-label"></label>
                 <input asp-for="Property.TotalVacantUnits" class="form-control" min=0/>
                 <span asp-validation-for="Property.TotalVacantUnits" class="text-danger"></span>
+                <span class="text-danger">@Model.VacantUnitErrorMessage</span>
             </div>
 
             <div class="form-group form-check col">
