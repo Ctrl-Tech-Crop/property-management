@@ -20,6 +20,7 @@ namespace data.models
         public string Email { get; set; }
         [Required]
         [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$", ErrorMessage = "Please enter valid Email ")]
         public string Phone { get; set; }
         public DateTime TenancyStartDate { get; set; }
         [Required]
@@ -31,6 +32,7 @@ namespace data.models
         public string EmergencyContactName { get; set; }
         [Required]
         [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$", ErrorMessage = "Please enter valid Email ")]
         public string EmergencyContactPhone { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]
