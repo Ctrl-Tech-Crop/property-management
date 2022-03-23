@@ -23,6 +23,7 @@ namespace data.context
         public virtual DbSet<PropertyType> PropertyTypes { get; set; }
         public virtual DbSet<Tenant> Tenants { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -75,7 +76,7 @@ namespace data.context
                 //.HasForeignKey(e => e.CompanyID)
                 //.OnDelete(DeleteBehavior.ClientSetNull)
                 //.HasConstraintName("FK_Company_TO_Property");
-                             
+
             });
 
             modelBuilder.Entity<PropertyType>(entity =>
@@ -215,6 +216,18 @@ namespace data.context
                     .HasForeignKey(d => d.UnitTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_PropertyType_TO_Unit");
+            });
+
+            modelBuilder.Entity<Company>(entity =>
+            {
+                entity.ToTable("Company");
+
+                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.CompanyName)
+                    .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .IsRequired();
             });
 
             OnModelCreatingPartial(modelBuilder);

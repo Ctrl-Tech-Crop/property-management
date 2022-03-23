@@ -9,7 +9,7 @@ namespace data.models
 {
     public class ApplicationUser : IdentityUser
     {
-        //[PersonalData]
-        //public string CompanyID { get; set; }
+        public Guid CompanyID { get; set; }
+        public virtual Company Company { get; set; }
     }
 }

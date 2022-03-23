@@ -12,6 +12,7 @@ namespace data.models
         {
             Tenants = new HashSet<Tenant>();
             Properties = new HashSet<Property>();
+            ApplicationUsers = new HashSet<ApplicationUser>();
         }
 
         public Guid Id { get; set; }
@@ -19,5 +20,6 @@ namespace data.models
 
         public virtual ICollection<Tenant> Tenants { get; set; }
         public virtual ICollection<Property> Properties { get; set; }
+        public virtual ICollection<ApplicationUser> ApplicationUsers { get; set; }
     }
 }
