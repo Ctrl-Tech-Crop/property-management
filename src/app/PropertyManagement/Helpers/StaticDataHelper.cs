@@ -29,8 +29,25 @@ namespace PropertyManagement.Helpers
             return new List<Laundry>()
             {
                 new Laundry {LaundryType="None"},
-                new Laundry {LaundryType="Ensuite"},
+                new Laundry {LaundryType="In-suite"},
                 new Laundry {LaundryType="Shared"},
+            };
+        }
+        public static List<Status> GetStatus()
+        {
+            return new List<Status>()
+            {
+                new Status {StatusType="Active"},
+                new Status {StatusType="Former"},
+            };
+        }
+        public static List<Standing> GetStandings()
+        {
+            return new List<Standing>()
+            {
+                new Standing {StandingType="Good"},
+                new Standing {StandingType="Bad"},
+                new Standing {StandingType="Warning"},
             };
         }
     }
