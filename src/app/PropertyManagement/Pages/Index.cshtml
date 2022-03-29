@@ -4,6 +4,276 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    Welcome
-</div>
+<style>
+
+ body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #333 url("https://cdn.wallpapersafari.com/13/37/waPOXH.jpg");
+        color: #fff;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 1em 0;
+}
+
+p {
+  margin: 0;
+  padding: 1em 0;
+}
+
+.b {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 2em;
+  border: 1px solid #666;
+  margin: 0.5em 0;
+}
+
+.b:hover {
+  background: #eaeaea;
+  color: #333;
+}
+
+/* Header Showcase */
+
+#showcase {
+  min-height: 450px;
+  color: #fff;
+  text-align: center;
+}
+
+ #showcase .bg-image {
+        position: absolute;
+        background: #333 url("https://cdn.wallpapersafari.com/71/0/ZqL1Sa.jpg");
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-position: center;
+        background-size: cover;
+        width: 73%;
+        height: 450px;
+        z-index: -1;
+        opacity: 0.6;
+    }
+
+#showcase h1 {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+#showcase .content-wrap,
+#section-a .content-wrap {
+  padding: 0 1.5em;
+}
+
+#section-a {
+        background: #eaeaea;
+        color: #333;
+        padding-bottom: 2em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#section-b {
+  padding: 2em 1em 1em;
+
+}
+
+#section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#section-b li {
+  margin-bottom: 1em;
+  background: #fff;
+  color: #333;
+}
+
+.card-content {
+        background: #eaeaea;
+        padding: 1.5em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#section-c {
+        background: #eaeaea;
+        color: #333;
+        padding: 2em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#section-d .box {
+        padding: 2em;
+        color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#section-d .box:first-child {
+  background: #2690d4;
+}
+
+  #section-a .content-text {
+    columns: 2;
+    column-gap: 2em;
+  }
+
+  #section-a .content-text p {
+    padding-top: 0;
+  }
+
+  .content-wrap,
+  #section-b ul {
+    grid-column: 2/4;
+
+  }
+
+  .box,
+  #main-footer div {
+    grid-column: span 2;
+  }
+
+  #section-b ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #section-b li {
+    width: 31%;
+  }
+
+    .photo {
+        flex-basis: 30%;
+        margin-left: -20%;
+        margin-top: 2%;
+    }
+
+    .text {
+        font-size: 20px;
+        padding-left: 20px;
+        margin-right: -5%;
+    }
+
+    .containerMission {
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+</style>
+<header id="showcase">
+    <div class="bg-image"></div>
+    <div class="content-wrap">
+        <h1>Welcome to Casa Estrada</h1>
+        <p>We are a family own business operating our house for you to have a memorable time in our city.
+        Summer or Winter, we will make sure your stay in Edmonton is a pleasant as possible.</p>
+        <a href="#section-b" class="b">Read More</a>
+    </div>
+</header>
+
+<main id="main">
+    <!-- Section A -->
+    <section id="section-a">
+        <div class="content-wrap">
+            <div class="containerMission">
+                <div class="photo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3079/3079022.png" />
+                </div>
+                <div class="text">
+                    <b>Our Mission</b>
+                    <br />
+
+                    Our mission is .................................///////////////
+                    <br />
+                    <b>Our Vision</b>
+                    <br />
+                    Our vision is ....................................................................<br />..................................
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section B -->
+    <section id="section-b">
+        <ul>
+            <li>
+                <div class="card">
+                    <img src="https://macdndev.azureedge.net/genesis-temp/7/5/b/d/7/2/75bd72cbd5f77b62b036362d01f791ac6b977565.jpeg" alt="">
+                    <div class="card-content">
+                        <h3 class="card-title">Properties</h3>
+                        <p>
+                            Add .... Properties
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.si4sUVhQyFIr1sf83WqshwHaE5?pid=ImgDet&rs=1" alt="">
+                    <div class="card-content">
+                        <h3 class="card-title">Units</h3>
+                        <p>
+                            Add .... Units
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <img src="https://www.investigations.com/wp-content/uploads/2019/04/tenent_background.jpg" alt="">
+                    <div class="card-content">
+                        <h3 class="card-title">Tenants</h3>
+                        <p>
+                            Add .... Tenants
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Section C -->
+    <section id="section-c">
+        <div class="content-wrap">
+            <h2 class="content-title">We handle all of your needs</h2>
+        </div>
+    </section>
+
+    <!-- Section D -->
+    <section id="section-d">
+        <div class="box">
+            <h2 class="content-title">Contact Us</h2>
+            <br />
+            <p style=" font-size:2.5rem">
+
+                <i class="fa-solid fa-envelope"> </i>
+                <i class="fa-solid fa-phone"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-solid fa-location-dot"></i>
+
+            </p>
+        </div>
+        <div class="box"></div>
+    </section>
+</main>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
