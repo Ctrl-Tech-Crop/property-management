@@ -2,25 +2,92 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Sign In";
 }
 
-<h1>@ViewData["Title"]</h1>
+
+<style>
+    .row {
+        bottom: 0;
+        left: 2%;
+        position: absolute;
+        right: 0;
+        top: 12%;
+        transform: skew(-5deg);
+    }
+
+    .left,
+    .right {
+        bottom: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+    }
+
+    .divider {
+        background-color: #b6d6c9;
+        border-left: solid 1px #b6d6c9;
+        border-right: solid 1px #b6d6c9;
+        bottom: -5%;
+        left: 49.5%;
+        position: absolute;
+        right: 49.5%;
+        top: -2%;
+        z-index: 1;
+        margin-top: -0.1%;
+    }
+
+    .left {
+        left: -5%;
+        right: 50%;
+    }
+
+    .right {
+        left: 50%;
+        right: -5%;
+
+    }
+
+
+    .pic {
+        bottom: -5%;
+        left: -5%;
+        position: absolute;
+        right: -5%;
+        top: 0;
+        transform: skew(5deg);
+    }
+
+    .pic {
+        background-image: url(https://assets.wallpapersin4k.org/uploads/2017/04/Real-Estate-Wallpaper-Backgrounds-17.jpg);
+        background-position: center center;
+        background-size: cover;
+    }
+</style>
+
 <div class="row">
-    <div class="col-md-4">
+
+    <div class="left">
+        <div class="sun"></div>
+    </div>
+    <h2>@ViewData["Title"]</h2>
+    <div class="col-md-12">
         <section>
             <form id="account" method="post">
-                <h4>Use a local account to log in.</h4>
+                <h8>New to Casa Estrada?</h8>
+
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-decoration-none font-italic">Create Account</a>
+
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Input.Email"></label>
-                    <input asp-for="Input.Email" class="form-control" />
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.Email">Email Address</label>
+                    <input asp-for="Input.Email" class="form-control" placeholder="Email" />
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label asp-for="Input.Password"></label>
-                    <input asp-for="Input.Password" class="form-control" />
+                    <input asp-for="Input.Password" class="form-control" placeholder="Password" />
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -31,25 +98,24 @@
                         </label>
                     </div>
                 </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Log in</button>
+                <div class="form-group col-md-6 text-left">
+                    <button type="submit" class="btn btn-primary col-md-6 btn-dark" style="background-color: #b6d6c9; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:20px; ">Sign In</button>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6 text-left font-italic">
                     <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                        <a id="forgot-password" asp-page="./ForgotPassword" class="text-decoration-none">Forgot password?</a>
                     </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
+                    @*<p>
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        </p>*@
+                    @*<p>
+                            <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                        </p>*@
                 </div>
             </form>
         </section>
     </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
+    @*<section>
             <h4>Use another service to log in.</h4>
             <hr />
             @{
@@ -76,8 +142,14 @@
                     </form>
                 }
             }
-        </section>
+        </section>*@
+
+    <div class="divider"></div>
+    <div class="right">
+    <div class="pic"></div>
     </div>
+    @*<div class="col-md-6 col-md-offset-2">
+        </div>*@
 </div>
 
 @section Scripts {

@@ -29,7 +29,7 @@ namespace PropertyManagement.Helpers
             return new List<Laundry>()
             {
                 new Laundry {LaundryType="None"},
-                new Laundry {LaundryType="Ensuite"},
+                new Laundry {LaundryType="In-suite"},
                 new Laundry {LaundryType="Shared"},
             };
         }

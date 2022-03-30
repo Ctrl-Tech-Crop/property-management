@@ -15,22 +15,22 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Tenant.Id" />
             <div class="form-group col-md-6">
-                <label asp-for="Tenant.UnitId" class="control-label"></label>
-                <select asp-for="Tenant.UnitId" class="form-control" asp-items="ViewBag.UnitId"></select>
+                <label asp-for="Tenant.UnitId" class="control-label">Unit ID</label>
+                <select asp-for="Tenant.UnitId" class="form-control" asp-items="ViewBag.Units"></select>
                 <span asp-validation-for="Tenant.UnitId" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
-                <label asp-for="Tenant.FirstName" class="control-label"></label>
+                <label asp-for="Tenant.FirstName" class="control-label">First Name</label>
                 <input asp-for="Tenant.FirstName" class="form-control" />
                 <span asp-validation-for="Tenant.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
-                <label asp-for="Tenant.LastName" class="control-label"></label>
+                <label asp-for="Tenant.LastName" class="control-label">Last Name</label>
                 <input asp-for="Tenant.LastName" class="form-control" />
                 <span asp-validation-for="Tenant.LastName" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
-                <label asp-for="Tenant.PreferredName" class="control-label"></label>
+                <label asp-for="Tenant.PreferredName" class="control-label">Preferred Name</label>
                 <input asp-for="Tenant.PreferredName" class="form-control" />
                 <span asp-validation-for="Tenant.PreferredName" class="text-danger"></span>
             </div>
@@ -45,7 +45,7 @@
                 <span asp-validation-for="Tenant.Phone" class="text-danger"></span>
             </div>
             <div class="form-group col-md-3">
-                <label asp-for="Tenant.TenancyStartDate" class="control-label"></label>
+                <label asp-for="Tenant.TenancyStartDate" class="control-label">Tenancy Start Date</label>
                 <input asp-for="Tenant.TenancyStartDate" class="form-control" />
                 <span asp-validation-for="Tenant.TenancyStartDate" class="text-danger"></span>
             </div>
@@ -60,17 +60,17 @@
                 <span asp-validation-for="Tenant.Standing" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
-                <label asp-for="Tenant.EmergencyContactName" class="control-label"></label>
+                <label asp-for="Tenant.EmergencyContactName" class="control-label">Emergency Contact Name</label>
                 <input asp-for="Tenant.EmergencyContactName" class="form-control" />
                 <span asp-validation-for="Tenant.EmergencyContactName" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
-                <label asp-for="Tenant.EmergencyContactPhone" class="control-label"></label>
+                <label asp-for="Tenant.EmergencyContactPhone" class="control-label">Emergency Contact Phone</label>
                 <input asp-for="Tenant.EmergencyContactPhone" class="form-control" />
                 <span asp-validation-for="Tenant.EmergencyContactPhone" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
-                <label asp-for="Tenant.EmergencyContactEmail" class="control-label"></label>
+                <label asp-for="Tenant.EmergencyContactEmail" class="control-label">Emergency Contact Email</label>
                 <input asp-for="Tenant.EmergencyContactEmail" class="form-control" />
                 <span asp-validation-for="Tenant.EmergencyContactEmail" class="text-danger"></span>
             </div>
@@ -80,12 +80,12 @@
                 </label>
             </div>
             <div class="form-group col-md-12">
-                <label asp-for="Tenant.MailingAddressLine1" class="control-label"></label>
+                <label asp-for="Tenant.MailingAddressLine1" class="control-label">Mailing Address Line One</label>
                 <input asp-for="Tenant.MailingAddressLine1" class="form-control" />
                 <span asp-validation-for="Tenant.MailingAddressLine1" class="text-danger"></span>
             </div>
             <div class="form-group col-md-12">
-                <label asp-for="Tenant.MailingAddressLine2" class="control-label"></label>
+                <label asp-for="Tenant.MailingAddressLine2" class="control-label">Mailing Address Line Two</label>
                 <input asp-for="Tenant.MailingAddressLine2" class="form-control" />
                 <span asp-validation-for="Tenant.MailingAddressLine2" class="text-danger"></span>
             </div>
@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="form-group col-md-4">
-                <label asp-for="Tenant.PostalCode" class="control-label"></label>
+                <label asp-for="Tenant.PostalCode" class="control-label">Postal Code</label>
                 <input asp-for="Tenant.PostalCode" class="form-control" />
                 <span asp-validation-for="Tenant.PostalCode" class="text-danger"></span>
             </div>

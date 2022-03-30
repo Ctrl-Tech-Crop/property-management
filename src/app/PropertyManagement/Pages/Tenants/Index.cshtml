@@ -1,12 +1,9 @@
 @page
 @model PropertyManagement.Pages.Tenants.IndexModel
-
 @{
     ViewData["Title"] = "Index";
 }
-
 <h1>Index</h1>
-
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -28,11 +25,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tenant[0].Phone)
             </th>
-
             <th>
                 @Html.DisplayNameFor(model => model.Tenant[0].Status)
             </th>
-
             <th>
                 @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactName)
             </th>
@@ -60,14 +55,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td>
+            <td width="100%">
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.EmergencyContactName)
             </td>

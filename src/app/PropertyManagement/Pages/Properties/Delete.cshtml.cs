@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using data.context;
 using data.models;
 using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Html;
 
 namespace PropertyManagement.Pages.Properties
 {
@@ -20,9 +22,11 @@ namespace PropertyManagement.Pages.Properties
         {
             _context = context;
         }
+        public Property Property { get; set; }
 
         [BindProperty]
-        public Property Property { get; set; }
+        [Required(ErrorMessage = "Property name is required")]
+        public string PropertyName { get; set; }
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
@@ -47,14 +51,30 @@ namespace PropertyManagement.Pages.Properties
             {
                 return NotFound();
             }
+            Property = await _context.Properties.Where(x => x.Id == id)
+                                                .Include(x => x.Units)
+                                                .ThenInclude(y => y.Tenants).FirstOrDefaultAsync();
 
-            Property = await _context.Properties.FindAsync(id);
+            if (Property == null)
+                return NotFound();
 
-            if (Property != null)
+            if (string.IsNullOrEmpty(PropertyName))
             {
-                _context.Properties.Remove(Property);
-                await _context.SaveChangesAsync();
+
+                return Page();
             }
+            if (PropertyName != Property.Name)
+            {
+                ModelState.AddModelError("PropertyName", "Property name does not match");
+                return Page();
+            }
+            foreach (Unit unit in Property.Units)
+                _context.Tenants.RemoveRange(unit.Tenants);
+
+            _context.Units.RemoveRange(Property.Units);
+            _context.Properties.Remove(Property);
+            await _context.SaveChangesAsync();
+
 
             return RedirectToPage("./Index");
         }
