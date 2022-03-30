@@ -32,9 +32,14 @@ namespace PropertyManagement
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddDbContext<FSPropertyManagementContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("FSPropertyManagementContext")));
+            
             services.AddTransient<IEmailSender, EmailSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration);
 
+            services.ConfigureApplicationCookie(o => {
+                o.ExpireTimeSpan = TimeSpan.FromDays(5);
+                o.SlidingExpiration = true;
+            });
 
         }
 

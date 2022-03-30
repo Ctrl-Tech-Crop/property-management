@@ -34,9 +34,10 @@ namespace data.Services
         public async Task Execute(string apiKey, string subject, string message, string toEmail)
         {
             var client = new SendGridClient(apiKey);
+
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("Joe@contoso.com", "Password Recovery"),
+                From = new EmailAddress("mmmmm-_-eeeee@hotmail.com", "CasaEstrada"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message
@@ -50,6 +51,8 @@ namespace data.Services
             _logger.LogInformation(response.IsSuccessStatusCode
                                    ? $"Email to {toEmail} queued successfully!"
                                    : $"Failure Email to {toEmail}");
+
+            
         }
 
     }
