@@ -4,10 +4,10 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<div>
+    <a title="Go back to list" asp-page="./Index"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
+</div>
 <h1>Create</h1>
-
-
 <h4>Tenant</h4>
 <hr />
 <div class="row">
@@ -81,7 +81,7 @@
                 </label>
             </div>
             <div class="form-group col-md-12">
-                <label asp-for="Tenant.MailingAddressLine1" class="control-label">Mailing Address Line One</label>
+                <label asp-for="Tenant.MailingAddressLine1" class="control-label">Mailing Address Line 1</label>
                 <input asp-for="Tenant.MailingAddressLine1" class="form-control" />
                 <span asp-validation-for="Tenant.MailingAddressLine1" class="text-danger"></span>
             </div>
@@ -117,10 +117,6 @@
                 </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

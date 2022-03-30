@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -29,6 +29,7 @@ namespace data.models
         public string Province { get; set; }
         [Required, MaxLength(6)]
         [RegularExpression(@"^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$", ErrorMessage = "Follow C#C#C# format.")]
+        [DisplayName("Postal Code")]
         public string PostalCode { get; set; }
         [Required]
         public string Name { get; set; }

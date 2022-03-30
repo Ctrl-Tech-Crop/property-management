@@ -3,9 +3,11 @@
 @{
     ViewData["Title"] = "Index";
 }
-<h1>Index</h1>
+<h1>Tenants</h1>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">
+         <i class="fa-solid fa-circle-plus xxx-large"></i>
+    </a>
 </p>
 <table class="table">
     <thead>
@@ -17,9 +19,6 @@
                 @Html.DisplayNameFor(model => model.Tenant[0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].PreferredName)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Tenant[0].Email)
             </th>
             <th>
@@ -29,20 +28,15 @@
                 @Html.DisplayNameFor(model => model.Tenant[0].Status)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactPhone)
-            </th> 
-            <th>
                 @Html.DisplayNameFor(model => model.Tenant[0].Unit)
             </th>
             <th></th>
+             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Tenant) {
-        <tr>
+        <tr class="tr-hoverable" onclick="location.href = '/Tenants/Details?id=@item.Id'">
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
@@ -50,31 +44,24 @@
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PreferredName)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td width="100%">
+            <td>
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactPhone)
-            </td> 
-            <td>
                 @Html.DisplayFor(modelItem => item.Unit.Number)
             </td>
 
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square xx-large"></i></a>
+                
+            </td>
+            <td>
+                <a asp-page="./Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash xx-large"></i></a>
             </td>
         </tr>
 }

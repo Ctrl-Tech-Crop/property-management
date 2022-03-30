@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using data.context;
 using data.models;
 using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations;
 
 namespace PropertyManagement.Pages.Tenants
 {
@@ -24,6 +25,10 @@ namespace PropertyManagement.Pages.Tenants
         [BindProperty]
         public Tenant Tenant { get; set; }
 
+        [BindProperty]
+        [Required(ErrorMessage = "Tenant's first name is required")]
+        public string TenantFirstName { get; set; }
+
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
             if (id == null)
@@ -32,7 +37,7 @@ namespace PropertyManagement.Pages.Tenants
             }
 
             Tenant = await _context.Tenants
-                .Include(t => t.Unit).FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (Tenant == null)
             {
@@ -50,11 +55,22 @@ namespace PropertyManagement.Pages.Tenants
 
             Tenant = await _context.Tenants.FindAsync(id);
 
-            if (Tenant != null)
+            if (Tenant == null)
+                return NotFound();
+
+            if (string.IsNullOrEmpty(TenantFirstName))
             {
+                return Page();
+            }
+            if(TenantFirstName != Tenant.FirstName)
+            {
+                ModelState.AddModelError("TenantFirstName", "Tenant's first name does not match");
+                return Page();
+            }
+            
                 _context.Tenants.Remove(Tenant);
                 await _context.SaveChangesAsync();
-            }
+            
 
             return RedirectToPage("./Index");
         }
