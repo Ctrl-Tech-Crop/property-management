@@ -51,7 +51,6 @@ namespace data.models
         public string PostalCode { get; set; }
         public virtual Unit Unit { get; set; }
 
-
         //public Guid CompanyID { get; set; }
         //public virtual Company Company { get; set; }
     }
