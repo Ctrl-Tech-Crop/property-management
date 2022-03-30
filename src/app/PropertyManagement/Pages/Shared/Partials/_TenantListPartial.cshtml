@@ -1,0 +1,56 @@
+@model IList<data.models.Tenant>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Unit)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="tr-hoverable" onclick="location.href = '/Tenants/Details?id=@item.Id'">
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit.Number)
+            </td>
+
+            <td>
+                <a asp-page="/Tenants/Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square xx-large"></i></a>
+                <a asp-page="/Tenants/Delete" asp-route-id="@item.Id" class="ml-2"><i class="fa-solid fa-trash xx-large"></i></a>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

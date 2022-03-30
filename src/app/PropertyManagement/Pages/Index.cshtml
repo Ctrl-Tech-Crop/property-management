@@ -84,14 +84,14 @@ p {
 
 #section-a {
         background: #eaeaea;
+        margin-top: 2em;
         color: #333;
         padding-bottom: 2em;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #section-b {
-  padding: 2em 1em 1em;
-
+  padding: 2em 0em 2em 0em;
 }
 
 #section-b ul {
@@ -101,7 +101,6 @@ p {
 }
 
 #section-b li {
-  margin-bottom: 1em;
   background: #fff;
   color: #333;
 }
@@ -110,22 +109,33 @@ p {
         background: #eaeaea;
         padding: 1.5em;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        height: 100%;
+}
+
+.card {
+    height: 100%;
 }
 
 #section-c {
         background: #eaeaea;
         color: #333;
-        padding: 2em;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#section-d {
+margin-bottom: 10px;
+}
+
 #section-d .box {
-        padding: 2em;
         color: #fff;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #section-d .box:first-child {
+  background: #2690d4;
+}
+
+#section-d .box:second-child {
   background: #2690d4;
 }
 
@@ -151,7 +161,7 @@ p {
 
   #section-b ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   #section-b li {
@@ -176,7 +186,7 @@ p {
         justify-content: center
     }
 </style>
-<header id="showcase">
+@* <header id="showcase">
     <div class="bg-image"></div>
     <div class="content-wrap">
         <h1>Welcome to Casa Estrada</h1>
@@ -184,7 +194,7 @@ p {
         Summer or Winter, we will make sure your stay in Edmonton is a pleasant as possible.</p>
         <a href="#section-b" class="b">Read More</a>
     </div>
-</header>
+</header> *@
 
 <main id="main">
     <!-- Section A -->
@@ -215,9 +225,6 @@ p {
                     <img src="https://macdndev.azureedge.net/genesis-temp/7/5/b/d/7/2/75bd72cbd5f77b62b036362d01f791ac6b977565.jpeg" alt="">
                     <div class="card-content">
                         <h3 class="card-title" style="font-family:Gadugi; color:cadetblue; font-size:28px; font-weight:900;">Properties</h3>
-                        <p>
-                            Add .... Properties
-                        </p>
                     </div>
                 </div>
             </li>
@@ -226,9 +233,6 @@ p {
                     <img src="https://th.bing.com/th/id/OIP.si4sUVhQyFIr1sf83WqshwHaE5?pid=ImgDet&rs=1" alt="">
                     <div class="card-content">
                         <h3 class="card-title" style="font-family: Gadugi; color: cadetblue; font-size: 28px; font-weight: 900;">Units</h3>
-                        <p>
-                            Add .... Units
-                        </p>
                     </div>
                 </div>
             </li>
@@ -237,9 +241,6 @@ p {
                     <img src="https://www.investigations.com/wp-content/uploads/2019/04/tenent_background.jpg" alt="">
                     <div class="card-content">
                         <h3 class="card-title" style="font-family: Gadugi; color: cadetblue; font-size: 28px; font-weight: 900;">Tenants</h3>
-                        <p>
-                            Add .... Tenants
-                        </p>
                     </div>
                 </div>
             </li>

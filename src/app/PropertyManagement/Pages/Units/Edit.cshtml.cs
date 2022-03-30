@@ -76,7 +76,7 @@ namespace PropertyManagement.Pages.Units
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Properties/Details", new { id = Unit.PropertyId });
         }
         private bool UnitExists(Guid id)
         {

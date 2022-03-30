@@ -6,7 +6,7 @@
 }
 
 <div>
-    <a title="Go back to list" asp-page="./Index"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
+    <a title="Go back to property details" asp-page="/Properties/Details" asp-route-id="@Model.Unit.PropertyId"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
 </div>
 
 <h1>Details</h1>
@@ -17,143 +17,14 @@
 
      @await Html.PartialAsync("Partials/_PropertyInfoCollapsable", Model.Property)
 
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.Number)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.Number)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.Area)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.Area)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.NumberofRooms)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.NumberofRooms)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.RentAmount)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.RentAmount)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.DepositAmount)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.DepositAmount)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.Furnished)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.Furnished)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.Laundry)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.Laundry)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.Property)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.Property.AddressLine1)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit.UnitType)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit.UnitType.Name)
-        </dd>
-    </dl>
+     @await Html.PartialAsync("Partials/_UnitInfo", Model.Unit)
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].PreferredName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactPhone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].EmergencyContactEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tenant[0].ParkingStall)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Tenant) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PreferredName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactPhone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ParkingStall)
-            </td>
-            <td>
-                <a asp-page="../Units/Details" asp-route-id="@item.Id">Details</a> 
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="mt-2">
+    <h3 class="flex flex-center">
+        <span>Tenants</span>
+        <span class="badge badge-primary span-25 ml-2">@Model.Tenant?.Count()</span>
+    </h3>
 
-
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Unit.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    @await Html.PartialAsync("Partials/_TenantListPartial", Model.Tenant?.ToList())
 </div>

@@ -10,11 +10,15 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container" style="border-bottom: solid 4px #b6d6c9; ">
-                <img src="https://estrada0.com/wp-content/uploads/2021/01/Logo.jpg" title="Title of image" alt="alt text here" style="height:5%;width:4%; text-align:left;">
-                <a class="navbar-brand" asp-area="" asp-page="/Index" style="font-weight:bold;font-size:28px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Casa Estrada</a>
+    @* <header>
+        <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index" style="font-weight:bold;font-size:28px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                <div class="row" style="width: 250px; flex-direction: row; align-content: space-between; justify-content: flex-start; align-items: center; gap: 5px;">
+                    <img src="https://estrada0.com/wp-content/uploads/2021/01/Logo.jpg" title="Title of image" alt="alt text here" style="height: 20%;width: 16%;text-align:left;"> 
+                    <span>Casa Estrada</span>
+                </div>
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,16 +26,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark border-left border-right" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark border-left border-right" asp-area="" asp-page="/Properties/Index">Property</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Properties/Index">Property</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark border-left border-right" asp-area="" asp-page="/Units/Index">Units</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark border-left border-right" asp-area="" asp-page="/Tenants/Index">Tenants</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Tenants/Index">Tenants</a>
                         </li>
                     </ul>
                 </div>
@@ -42,7 +43,76 @@
 
             </div>
         </nav>
-    </header>
+    </header> *@
+    <header>
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+         <a class="navbar-brand" asp-area="" asp-page="/Index" style="font-weight:bold;font-size:28px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                <div class="row" style="width: 250px; flex-direction: row; align-content: space-between; justify-content: flex-start; align-items: center; gap: 5px;">
+                    <img src="https://estrada0.com/wp-content/uploads/2021/01/Logo.jpg" title="Title of image" alt="alt text here" style="height: 20%;width: 16%;text-align:left;"> 
+                    <span>Casa Estrada</span>
+                </div>
+                </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Properties/Index">Property</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Tenants/Index">Tenants</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                    <partial name="_LoginPartial" />
+                </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+        background: #333 url('https://cdn.wallpapersafari.com/71/0/ZqL1Sa.jpg');
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-position: center;
+        background-size: cover;
+        height: 450px;
+        opacity: 0.85;
+    "
+  >
+    <div class="mask" style="padding: 20px;background-color: rgba(0, 0, 0, 0.6);margin-top: 45px;">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Welcome to Casa Estrada</h1>
+          <h4 class="mb-3">We are a family own business operating our house for you to have a memorable time in our city.
+        Summer or Winter, we will make sure your stay in Edmonton is a pleasant as possible.</h4>
+          <a class="btn btn-outline-light btn-lg" href="#section-b" role="button"
+          >Read More</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

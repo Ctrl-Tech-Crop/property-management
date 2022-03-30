@@ -75,7 +75,7 @@ namespace PropertyManagement.Pages.Units
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Properties/Details", new { id = Unit.PropertyId });
         }
     }
 }
