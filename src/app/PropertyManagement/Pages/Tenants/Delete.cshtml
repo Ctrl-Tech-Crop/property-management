@@ -5,132 +5,29 @@
     ViewData["Title"] = "Delete";
 }
 
+<div>
+    <a title="Go back to list" asp-page="./Details" asp-route-id="@Model.Tenant.Id"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
+</div>
+
 <h1>Delete</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Deleting will remove all tenants information.</h3>
 <div>
-    <h4>Tenant</h4>
+    <h4>Are you sure you want to delete this tenant?</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.PreferredName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.PreferredName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.Phone)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.Phone)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.TenancyStartDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.TenancyStartDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.Status)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.Status)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.Standing)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.Standing)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.EmergencyContactName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.EmergencyContactName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.EmergencyContactPhone)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.EmergencyContactPhone)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.EmergencyContactEmail)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.EmergencyContactEmail)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.ParkingStall)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.ParkingStall)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.MailingAddressLine1)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.MailingAddressLine1)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.MailingAddressLine2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.MailingAddressLine2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.City)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.City)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.Province)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.Province)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.Country)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.Country)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.PostalCode)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.PostalCode)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tenant.Unit)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tenant.Unit.Number)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Tenant.Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post">
+                <input type="hidden" asp-for="Tenant.Id" />
+                <div class="form-group col-md-4 pl-0">
+                    <input asp-for="TenantFirstName" placeholder="Enter tenant first name to delete" class="form-control" />
+                    <span asp-validation-for="TenantFirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4 pl-0">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
