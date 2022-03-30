@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
 <style>
 
  body {
@@ -277,3 +276,30 @@ margin-bottom: 10px;
     <partial name="_ValidationScriptsPartial" />
 }
 
+
+@section Header {
+    <div
+    class="p-5 text-center bg-image"
+    style="
+        background: #333 url('https://cdn.wallpapersafari.com/71/0/ZqL1Sa.jpg');
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-position: center;
+        background-size: cover;
+        height: 450px;
+        opacity: 0.85;
+    "
+  >
+    <div class="mask" style="padding: 20px;background-color: rgba(0, 0, 0, 0.6);margin-top: 45px;">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Welcome to Casa Estrada</h1>
+          <h4 class="mb-3">We are a family own business operating our house for you to have a memorable time in our city.
+        Summer or Winter, we will make sure your stay in Edmonton is a pleasant as possible.</h4>
+          <a class="btn btn-outline-light btn-lg" href="#section-b" role="button"
+          >Read More</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+}
