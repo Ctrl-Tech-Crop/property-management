@@ -1,42 +1,109 @@
 @page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Sign Up";
 }
 
-<h1>@ViewData["Title"]</h1>
+    <style>
+    .row {
+        bottom: 0;
+        left: 2%;
+        position: absolute;
+        right: 0;
+        top: 12%;
+        transform: skew(-5deg);
+    }
+
+    .left,
+    .right {
+        bottom: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+    }
+
+    .divider {
+        background-color: #b6d6c9;
+        border-left: solid 1px #b6d6c9;
+        border-right: solid 1px #b6d6c9;
+        bottom: -5%;
+        left: 49.5%;
+        position: absolute;
+        right: 49.5%;
+        top: -2%;
+        z-index: 1;
+        margin-top:-0.1%;
+    }
+
+    .left {
+        left: -5%;
+        right: 50%;
+    }
+
+    .right {
+        left: 50%;
+        right: -5%;
+        margin-top:-1%;
+    }
+
+
+    .pic {
+        bottom: -5%;
+        left: -5%;
+        position: absolute;
+        right: -5%;
+        top: 0;
+        transform: skew(5deg);
+    }
+
+        .pic {
+            background-image: url(https://th.bing.com/th/id/R.cef7d1835ceabd95a23d96385674fbe1?rik=IaRHmu6sTb2NYQ&riu=http%3a%2f%2fwww.wallpapersin4k.org%2fwp-content%2fuploads%2f2017%2f04%2fReal-Estate-Wallpaper-Backgrounds-8.jpg&ehk=Pp9T1TmDRgIJaM6Z2xA%2fuM0Xqi94MSJGWx%2fqlLvkqcU%3d&risl=&pid=ImgRaw&r=0);
+            background-position: center center;
+            background-size: cover;
+        }
+</style>
+
 
 <div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.CompanyID" class="control-label">Company</label>
-                <select asp-for="Input.CompanyID" class ="form-control" asp-items="ViewBag.Companies"></select>
-                <span asp-validation-for="Input.CompanyID" class="text-danger"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
+    <div class="left">
+        <div class="sun"></div>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    <h2>@ViewData["Title"]</h2>
+    <div class="col-md-12">
+        <section>
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h5>It is Quick and Easy.</h5>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.Email">Email Address</label>
+                    <input asp-for="Input.Email" class="form-control" placeholder="Enter Email" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.CompanyID" class="control-label">Company</label>
+                    <select asp-for="Input.CompanyID" class="form-control" asp-items="ViewBag.Companies"></select>
+                    <span asp-validation-for="Input.CompanyID" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <button type="submit" class="btn btn-primary col-md-6 btn-dark" style="background-color: #b6d6c9; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:20px; ">Register</button>
+           </div>
+                    </form>
+        </section>
+    </div>
+    @*<div class="col-md-6 col-md-offset-2">
         <section>
             <h4>Use another service to register.</h4>
             <hr />
@@ -64,8 +131,13 @@
                     </form>
                 }
             }
-        </section>
+        </section>*@
+    <div class="divider"></div>
+    <div class="right">
+        <div class="pic"></div>
     </div>
+    @*<div class="col-md-6 col-md-offset-2">
+        </div>*@
 </div>
 
 @section Scripts {

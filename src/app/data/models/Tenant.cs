@@ -20,7 +20,7 @@ namespace data.models
         public string Email { get; set; }
         [Required]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$", ErrorMessage = "Please enter valid Email ")]
+        [RegularExpression(@"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$", ErrorMessage = "Follow (###)-###-#### format. ")]
         public string Phone { get; set; }
         public DateTime TenancyStartDate { get; set; }
         [Required]
