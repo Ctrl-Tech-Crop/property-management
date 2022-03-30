@@ -14,7 +14,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container" style="border-bottom: solid 4px #b6d6c9; ">
                 <img src="https://estrada0.com/wp-content/uploads/2021/01/Logo.jpg" title="Title of image" alt="alt text here" style="height:5%;width:4%; text-align:left;">
-                <a class="navbar-brand" asp-area="" asp-page="/Index" style="font-weight:bold;font-size:28px;#b6d6c9font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Casa Estrada</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index" style="font-weight:bold;font-size:28px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Casa Estrada</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,6 +35,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
                     <partial name="_LoginPartial" />
                 </div>
@@ -45,6 +46,7 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+
         </main>
     </div>
 
