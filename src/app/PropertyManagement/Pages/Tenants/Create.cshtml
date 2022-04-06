@@ -2,13 +2,13 @@
 @model PropertyManagement.Pages.Tenants.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add a Tenant";
 }
 <div>
     <a title="Go back to list" asp-page="./Index"><i class="fa-solid fa-circle-arrow-left xxx-large"></i></a>
 </div>
-<h1>Create</h1>
-<h4>Tenant</h4>
+<h1>Add a Tenant</h1>
+
 <hr />
 <div class="row">
 
@@ -106,15 +106,15 @@
                     <input asp-for="Tenant.Country" class="form-control" />
                     <span asp-validation-for="Tenant.Country" class="text-danger"></span>
                 </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label asp-for="Tenant.PostalCode" class="control-label">Postal Code</label>
-                    <input asp-for="Tenant.PostalCode" class="form-control" />
-                    <span asp-validation-for="Tenant.PostalCode" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="Tenant.PostalCode" class="control-label">Postal Code</label>
+                <input asp-for="Tenant.PostalCode" class="form-control" />
+                <span asp-validation-for="Tenant.PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
         </form>
     </div>
 </div>
