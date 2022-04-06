@@ -47,18 +47,15 @@ namespace PropertyManagement.Pages.Properties
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        [BindProperty]
-        public string VacantUnitErrorMessage { get; set; }
         public async Task<IActionResult> OnPostAsync()
         {
-            VacantUnitErrorMessage = "";
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            if (Property.TotalVacantUnits >= Property.TotalUnits)
+            if (Property.TotalVacantUnits > Property.TotalUnits)
             {
-                VacantUnitErrorMessage = "Value can't be greater than Total Units";
+                ModelState.AddModelError("Property.TotalVacantUnits", "Value can't be greater than Total Units");
                 ViewData["Provinces"] = new SelectList(StaticDataHelper.GetCanadianProvinces(), "Abbreviation", "Name");
                 return Page();
             }
