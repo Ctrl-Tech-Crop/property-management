@@ -1,0 +1,28 @@
+@model data.models.Tenant
+<dl class="row">
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+        <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Email)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+        </dd>
+        <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Phone)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Phone)
+    </dd>
+</dl>

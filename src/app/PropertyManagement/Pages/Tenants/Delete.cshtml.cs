@@ -26,8 +26,9 @@ namespace PropertyManagement.Pages.Tenants
         public Tenant Tenant { get; set; }
 
         [BindProperty]
-        [Required(ErrorMessage = "Tenant's first name is required")]
-        public string TenantFirstName { get; set; }
+        [Required(ErrorMessage = "Tenants email is required")]
+        [DataType(DataType.EmailAddress)]
+        public string TenantEmail { get; set; }
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
@@ -58,13 +59,13 @@ namespace PropertyManagement.Pages.Tenants
             if (Tenant == null)
                 return NotFound();
 
-            if (string.IsNullOrEmpty(TenantFirstName))
+            if (string.IsNullOrEmpty(TenantEmail))
             {
                 return Page();
             }
-            if(TenantFirstName != Tenant.FirstName)
+            if(TenantEmail != Tenant.Email)
             {
-                ModelState.AddModelError("TenantFirstName", "Tenant's first name does not match");
+                ModelState.AddModelError("TenantEmail", "Tenant email does not match");
                 return Page();
             }
             
