@@ -7,6 +7,7 @@ using data.models;
 using System;
 using PropertyManagement.Helpers;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace PropertyManagement.Pages.Properties
 {
@@ -28,20 +29,17 @@ namespace PropertyManagement.Pages.Properties
 
         [BindProperty]
         public Property Property { get; set; }
-        [BindProperty]
-        public string VacantUnitErrorMessage { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            VacantUnitErrorMessage = "";
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            if (Property.TotalVacantUnits >= Property.TotalUnits)
+            if (Property.TotalVacantUnits > Property.TotalUnits)
             {
-                VacantUnitErrorMessage = "Value can't be greater than Total Units";
+                ModelState.AddModelError("Property.TotalVacantUnits", "Value can't be greater than Total Units");
                 ViewData["Provinces"] = new SelectList(StaticDataHelper.GetCanadianProvinces(), "Abbreviation", "Name");
                 return Page();
             }
