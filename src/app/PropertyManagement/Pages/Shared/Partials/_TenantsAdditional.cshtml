@@ -1,0 +1,13 @@
+@model data.models.Tenant
+
+
+<div class="ml-2">
+    @if (Model.ParkingStall)
+    {
+        <img title="Parking available" src="https://img.icons8.com/material/48/000000/parking--v1.png" />
+    } @if (!Model.ParkingStall)
+    {
+        <img title="No parking available" src="https://img.icons8.com/material/48/000000/no-parking--v2.png" />
+    }
+</div>
+

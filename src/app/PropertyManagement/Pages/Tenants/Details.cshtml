@@ -61,13 +61,18 @@
             <dd class="col-sm-8">
                 @Html.DisplayFor(model => model.Tenant.Standing)
             </dd>
-            <dt class="col-sm-4">
-                @Html.DisplayNameFor(model => model.Tenant.ParkingStall)
-            </dt>
-            <dd class="col-sm-8">
-                @Html.DisplayFor(model => model.Tenant.ParkingStall)
-            </dd>
-        </dl>
+            @*<dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Tenant.ParkingStall)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Tenant.ParkingStall)
+        </dd>
+                  </dl>*@
+            <div class="w-50" style="margin-left:34%;">
+                @await Html.PartialAsync("Partials/_TenantsAdditional", Model.Tenant)
+            </div>
+</div>
+      
     </div>
 
     <h4>Emergency Contact</h4>

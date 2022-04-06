@@ -43,9 +43,23 @@
         <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.Furnished)
         </dt>
-        <dd class="col-sm-8">
+        @*<dd class="col-sm-8">
             @Html.DisplayFor(model => model.Furnished)
-        </dd>
+        </dd>*@
+
+            <div class="col-sm-6 flex">
+                <div>
+                    @if (Model.Furnished)
+                    {
+                        <img title="Furnished Available" src="https://img.icons8.com/ios-glyphs/344/armchair.png" style="height:13%; width:13%;"/>
+                    }
+                    @if (!Model.Furnished)
+                    {
+                        <img title="No Furnished Available" src="https://img.icons8.com/ios-glyphs/344/not-applicable.png" style="height:13%; width:13%;" />
+                    }
+                </div>
+                </div>
+       
         <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.Laundry)
         </dt>
