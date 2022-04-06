@@ -15,14 +15,14 @@
 <div>
     <h4>Are you sure you want to delete this tenant?</h4>
     <hr />
-
+     @await Html.PartialAsync("Partials/_TenantInfoCollapsable", Model.Tenant)
     <div class="row">
         <div class="col-md-12">
             <form method="post">
                 <input type="hidden" asp-for="Tenant.Id" />
                 <div class="form-group col-md-4 pl-0">
-                    <input asp-for="TenantFirstName" placeholder="Enter tenant first name to delete" class="form-control" />
-                    <span asp-validation-for="TenantFirstName" class="text-danger"></span>
+                    <input asp-for="TenantEmail" placeholder="Enter tenants email to delete" class="form-control" />
+                    <span asp-validation-for="TenantEmail" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4 pl-0">
                     <input type="submit" value="Delete" class="btn btn-danger" />
